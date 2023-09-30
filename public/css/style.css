@@ -1,0 +1,14 @@
+body{
+    background: #FFB600;
+
+}
+.header {
+    background: #fff;
+    padding: 24px;
+}
+
+.logo{
+    color: #FFB600;
+    font-weight: bold;
+    font-size: 96px;
+}

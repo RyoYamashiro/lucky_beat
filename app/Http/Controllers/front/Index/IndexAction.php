@@ -15,6 +15,6 @@ class IndexAction extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        return view('front.index.index');
     }
 }
