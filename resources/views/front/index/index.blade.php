@@ -16,7 +16,7 @@
             <div class="user_icon_frame">
                 my_icon
             </div>
-            <div>
+            <div class="text-3xl font-bold underline">
                 HumbergerMenu
             </div>
             <button class="hamburger">
