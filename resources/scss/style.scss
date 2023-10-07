@@ -1,16 +1,24 @@
+$theme_color : #FFB76F;
+$base_color: #FFE9BE;
+$sub_color: #23DFDF;
+$accent_color: #FFB6B6;
+
+$sample_padding: 24px;
+
 body{
-    background: #FFB600;
+    background: $base_color;
+    color: $sub_color;
 
 }
 .header {
     background: #fff;
-    padding: 24px;
-    color: black;
+    padding: $sample_padding;
+    color: $accent_color;
 
 }
 
 .logo{
-    color: #FFB600;
+    color: $theme_color;
     font-weight: bold;
     font-size: 96px;
 }
