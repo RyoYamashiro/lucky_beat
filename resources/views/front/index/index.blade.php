@@ -3,11 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>LuckyBeat</title>
-        <!-- reset.css destyle -->
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
-        />
         <link href="{{ asset('./css/app.css') }}" rel="stylesheet">
     </head>
     <body>
