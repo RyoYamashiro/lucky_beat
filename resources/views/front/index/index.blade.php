@@ -8,18 +8,19 @@
     <body>
         <header class="header">
             <h1 class="logo">LuckyBeat</h1>
-            <div class="user_icon_frame">
-                my_icon
+            <div class="header-right-part">
+                <a class="user-icon-frame">
+                    {{-- <img src=""> --}}
+                </a>
+                <div class="hambergar">
+                    <!-- ハンバーガーアイコン -->
+                    <span class="span1"></span>
+                    <span class="span2"></span>
+                    <span class="span3"></span>
+                    <p class="menu-notation">メニュー</p>
+                </div>
+
             </div>
-            <div class="text-3xl font-bold underline">
-                HumbergerMenu
-            </div>
-            <button class="hamburger">
-                <span class="hamburger_bar"></span>
-                <span class="hamburger_bar"></span>
-                <span class="hamburger_bar"></span>
-                メニュー   
-            </button>
         </header>
 
         favorite(icon)
@@ -46,7 +47,6 @@
         2
         3
         >
-
     </body>
 </html>
 
