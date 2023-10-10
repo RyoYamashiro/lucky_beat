@@ -30,8 +30,6 @@ $space_size_s: 8px;
 $persent_full: 100%;
 $smartphone_width: 390px;
 
-$header_top_padding: 81px;
-$header_bottom_padding: 40px;
 
 
 body{
@@ -39,7 +37,7 @@ body{
 }
 .header {
     background: $white_color;
-    padding: $space_size_l $space_size_l $space_size_l;
+    padding: $space_size_xxl $space_size_l $space_size_l;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,6 +99,7 @@ body{
 
 .main-container {
     padding: $space_size_l;
+    position: relative;
     .beat-list-item{
         margin-bottom: $space_size_l;
         height: $size_3l;
@@ -231,30 +230,47 @@ body{
             }
         }
     }
-}
-.pagination-holder {
-    display: flex;
-    justify-content: center;
-    .pagination-item {
-        height: $space_size_3l;
-        width: $space_size_3l;
-        border-radius: $space_size_m;
-        background: $theme_color;
-        margin-right: $space_size_m;
-        position: relative;
-
-        &:last-child {
-            margin-right: 0;
+    .pagination-holder {
+        display: flex;
+        justify-content: center;
+        margin: $space_size_xl 0 $space_size_m;
+        .pagination-item {
+            height: $space_size_3l;
+            width: $space_size_3l;
+            border-radius: $space_size_m;
+            background: $theme_color;
+            margin-right: $space_size_m;
+            position: relative;
+    
+            &:last-child {
+                margin-right: 0;
+            }
+            &-active {
+                background: $sub_color;
+            }
+            .pagination-text {
+                font-size: $font_size_xxl;
+                color: $white_color;
+                position: absolute;
+                top: 10%;
+                left: 34%;
+            }
         }
-        &-active {
-            background: $sub_color;
-        }
-        .pagination-text {
-            font-size: $font_size_xxl;
-            color: $white_color;
+    }
+    
+    .search-button-holder {
+        position: absolute;
+        background: $sub_color;
+        width: 150px;
+        height: 150px;
+        bottom: -$space_size_l;
+        border-radius: $space_size_3l;
+        .search-icon {
             position: absolute;
-            top: 10%;
-            left: 34%;
+            left: 20%;
+            top: 20%;
+            color: $white_color;
+            font-size: $font_size_3l;
         }
     }
 }
