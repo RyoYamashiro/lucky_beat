@@ -174,14 +174,31 @@
             </article>
 
             
+        <section class="pagination-holder">
+            <p class="pagination-item">
+                <span class="pagination-text">|<</span>
+            </p>
+            <p class="pagination-item">
+                <span class="pagination-text">1</span>
+            </p>
+            <p class="pagination-item">
+                <span class="pagination-text">2</span>
+            </p>
+            <p class="pagination-item pagination-item-active">
+                <span class="pagination-text">3</span>
+            </p>
+            <p class="pagination-item">
+                <span class="pagination-text">4</span>
+            </p>
+            <p class="pagination-item">
+                <span class="pagination-text">5</span>
+            </p>
+            <p class="pagination-item">
+                <span class="pagination-text">>|</span>
+            </p>
+        </section>
 
-            <i class="fa fa-search" aria-hidden="true"></i>
-
-        |<
-        1
-        2
-        3
-        >|
+        <i class="fa fa-search" aria-hidden="true"></i>
         </main>
         <footer class="footer">
             Copyright © 2023 ryo_lio All Rights Reserved.

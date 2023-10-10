@@ -15,7 +15,7 @@ $theme_font_family: 'JetBrains Mono';
 $size_3l: 280px;
 
 $font_size_3l: 80px;
-$font_size_xxl: px;
+$font_size_xxl: 52px;
 $font_size_xl: 40px;
 $font_size_l: 30px;
 $font_size_m: 20px;
@@ -229,11 +229,34 @@ body{
                     border-radius: $space_size_m 0 0 0;
                 }    
             }
-            
         }
-
     }
+}
+.pagination-holder {
+    display: flex;
+    justify-content: center;
+    .pagination-item {
+        height: $space_size_3l;
+        width: $space_size_3l;
+        border-radius: $space_size_m;
+        background: $theme_color;
+        margin-right: $space_size_m;
+        position: relative;
 
+        &:last-child {
+            margin-right: 0;
+        }
+        &-active {
+            background: $sub_color;
+        }
+        .pagination-text {
+            font-size: $font_size_xxl;
+            color: $white_color;
+            position: absolute;
+            top: 10%;
+            left: 34%;
+        }
+    }
 }
 
 .footer {
@@ -241,7 +264,7 @@ body{
     color: $white_color;
     text-align: center;
     font-size: $space_size_m;
-    padding: $space_size_s;
+    padding: $space_size_m;
 }
 
 
