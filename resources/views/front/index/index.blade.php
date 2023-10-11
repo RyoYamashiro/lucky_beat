@@ -274,6 +274,7 @@
                 </p>
             </section>
 
+            {{-- TODO::第2フェーズで使う。 --}}
             <div class="search-button-holder">
                 <i class="fa fa-search search-icon" aria-hidden="true"></i>
             </div>
