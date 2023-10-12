@@ -7,22 +7,7 @@
         <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
     <body>
-        <header class="header">
-            <h1 class="logo">LuckyBeat</h1>
-            <div class="header-right-part">
-                <a class="user-icon-frame">
-                    {{-- <img src=""> --}}
-                </a>
-                <div class="hambergar">
-                    <!-- ハンバーガーアイコン -->
-                    <span class="span1"></span>
-                    <span class="span2"></span>
-                    <span class="span3"></span>
-                    <p class="menu-notation">メニュー</p>
-                </div>
-
-            </div>
-        </header>
+        @include('front.components.header')
         
         <main class="main-container">
             <article class="beat-list-item">
@@ -148,6 +133,7 @@
                     </div>
 
                     <div class="beat-left-lower">
+                        {{-- TODO::カスタムのバッジを省くとスタイル崩れる --}}
                         <p class="badge custom-beat-badge">カスタム</p>
                         <p class="badge play-time-badge">3:30</p>
                     </div>
@@ -279,9 +265,7 @@
                 <i class="fa fa-search search-icon" aria-hidden="true"></i>
             </div>
         </main>
-        <footer class="footer">
-            Copyright © 2023 ryo_lio All Rights Reserved.
-        </footer>
+        @include('front.components.footer')
     </body>
 </html>
 
