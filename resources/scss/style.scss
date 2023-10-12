@@ -32,15 +32,18 @@ $smartphone_width: 390px;
 
 
 
-body {
+.wrapper {
     background: $base_color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 a {
     color: $sub_color;
 }
 
 .button {
-    font-size: $font_size_l;
+    font-size: $font_size_xl;
     font-weight: bold;
     padding: $space_size_m;
     border-radius: $space_size_m;
@@ -299,6 +302,7 @@ a {
 }
 
 .footer {
+    margin-top: auto;
     background: $theme_color;
     color: $white_color;
     text-align: center;
@@ -312,7 +316,7 @@ a {
     border-radius: $space_size_m;
     margin-top: $space_size_m;
     box-sizing: border-box;
-    padding: $space_size_m $space_size_xl;
+    padding: $space_size_xl;
     .form-header {
         margin: $space_size_l 0;
         text-align: right;
@@ -341,16 +345,16 @@ a {
         &-label {
             display: inline-block;
             color: $theme_color;
-            font-size: $font_size_l;
+            font-size: $font_size_xl;
             font-weight: bold;
             margin-bottom: $space_size_s;
         }
         &-form {
             width: $persent_full;
-            padding: $space_size_s;
+            padding: 0 $space_size_s;
             border-radius: $space_size_m;
             border: 4px solid $theme_color;
-            font-size: $font_size_l;
+            font-size: $font_size_xl;
             &-error {
                 border-color: $accent_color;
             }

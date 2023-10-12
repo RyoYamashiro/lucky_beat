@@ -21,11 +21,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div class="wrapper">
         @include('front.components.header')
 
         <main class="main-container">
             @yield('content')
         </main>
         @include('front.components.footer')
+    </div>
 </body>
 </html>
