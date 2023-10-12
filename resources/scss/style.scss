@@ -21,6 +21,7 @@ $font_size_l: 30px;
 $font_size_m: 20px;
 $font_size_s: 12px;
 
+$space_size_4l: 120px;
 $space_size_3l: 100px;
 $space_size_xxl: 80px;
 $space_size_xl: 60px;
@@ -71,7 +72,7 @@ a {
 
 .header {
     background: $white_color;
-    padding: $space_size_xxl $space_size_l $space_size_l;
+    padding: $space_size_3l $space_size_l $space_size_l;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -91,12 +92,12 @@ a {
             height: $space_size_3l;
             border-radius: $space_size_3l;
             background: $inactive_color;
-            margin-right: $space_size_3l;
+            margin-right: $space_size_4l;
             box-shadow: 0px 0px 2px 0px $opacity_shadow inset;
         }
         .hambergar{
             span {
-                width: $space_size_xxl;
+                width: $space_size_3l;
                 height: 10px;
                 border-radius: 5px;
                 background-color: $theme_color;
@@ -119,7 +120,7 @@ a {
             }
             .menu-notation {
             position: absolute;
-            width: $space_size_xxl;
+            width: $space_size_3l;
             right: 0px;
             bottom: 0px;
             text-align: center;
