@@ -58,6 +58,11 @@ a {
         background-color: $accent_color;
     }
 }
+.text {
+    &-primary {
+        color: $sub_color;
+    }
+}
 
 
 .badge {
@@ -349,6 +354,9 @@ a {
             font-size: $font_size_xl;
             font-weight: bold;
             margin-bottom: $space_size_s;
+        }
+        &-label-holder {
+            text-align: center;
         }
         &-form {
             width: $persent_full;

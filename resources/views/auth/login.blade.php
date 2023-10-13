@@ -10,7 +10,7 @@
             <span class="form-title-text">ログイン</span>
         </div>
 
-        <div class="card-body">
+        <div>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 

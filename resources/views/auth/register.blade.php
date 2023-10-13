@@ -1,76 +1,91 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<div class="white-form-holder">
+    <div class="form-header">
+        <a class="form-header-link" href="#">ログインページへ</a>
+    </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <div class="form-title">
+        <span class="form-title-text">ユーザー登録</span>
+    </div>
+        <div>
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                <div class="input-holder">
+                    <label for="name" class="input-label">ユーザーID</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <div>
+                        <input id="name" type="text" class="input-form @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        {{-- @error('name') --}}
+                            <span class="input-error-message" role="alert">
+                                {{-- <strong>{{ $message }}</strong> --}}
+                                文字列で入力してください。
+                            </span>
+                        {{-- @enderror --}}
+                    </div>
                 </div>
-            </div>
+                <div class="input-holder">
+                    <label for="email" class="input-label">メールアドレス</label>
+
+                    <div>
+                        <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                        {{-- @error('email') --}}
+                            <span class="input-error-message" role="alert">
+                                {{-- <strong>{{ $message }}</strong> --}}
+                                メールアドレス形式で入力してください。
+                            </span>
+                        {{-- @enderror --}}
+                    </div>
+                </div>
+
+                <div class="input-holder">
+                    <label for="password" class="input-label">パスワード</label>
+
+                    <div>
+                        <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="new-password">
+
+                        {{-- @error('email') --}}
+                            <span class="input-error-message" role="alert">
+                                {{-- <strong>{{ $message }}</strong> --}}
+                                パスワードかメールアドレスが誤っております。
+                            </span>
+                        {{-- @enderror --}}
+                    </div>
+                </div>
+
+                <div class="input-holder">
+                    <label for="password-confirm" class="input-label">確認用パスワード</label>
+
+                    <div>
+                        <input id="password-confirm" type="password" class="input-form" name="password_confirmation" required autocomplete="new-password">
+                    </div>
+                </div>
+
+                <div class="input-holder">
+                    <div class="input-label-holder">
+                        {{-- TODO::タイトルの色を青にする。text-primaryが優先順位低い --}}
+                        <label for="password-confirm" class="input-label text-primary">利用規約</label>
+                    </div>
+                    {{-- TODO::チェックボックスと他文字のスタイル効かせよう --}}
+                    <input class="form-check-input" type="checkbox" name="term" id="term">
+                    <a>こちら</a>を一読し、問題なければチェックしてください。
+                </div>
+
+                <div class="button-holder">
+                    @if (Route::has('password.request'))
+                        <a class="button button-danger" href="{{ route('password.request') }}">
+                            パスワードを忘れた
+                        </a>
+                    @endif
+                    <button type="submit" class="button button-primary">
+                        登録
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
