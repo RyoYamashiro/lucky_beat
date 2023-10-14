@@ -14,7 +14,6 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        // TODO::100個ほどダミーデータを作りたい。
         return [
             'user_identified_name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
