@@ -69,7 +69,7 @@
                     <div class="input-label-holder">
                         <label for="password-confirm" class="input-label text-success">利用規約</label>
                     </div>
-                    {{-- TODO::チェックボックスと他文字のスタイル効かせよう --}}
+                    {{-- TODO::チェックボックスと他文字のスタイル効かせよう fontawesomeで良いかも --}}
                     <div class="checkbox-holder">
                         <input class="input-checkbox" type="checkbox" name="term" id="term">
                         <p class="annotation-text"><a class="strong-text">こちら</a>を確認し、問題なければチェックしてください。</p>
