@@ -15,7 +15,7 @@
                 @csrf
 
                 <div class="input-holder">
-                    <label for="email" class="input-label">メールアドレス</label>
+                    <label for="email" class="input-label text-primary">メールアドレス</label>
 
                     <div>
                         <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="input-holder">
-                    <label for="password" class="input-label">パスワード</label>
+                    <label for="password" class="input-label text-primary">パスワード</label>
 
                     <div>
                         <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="current-password">
@@ -52,7 +52,7 @@
                             パスワードを忘れた
                         </a>
                     @endif
-                    <button type="submit" class="button button-primary">
+                    <button type="submit" class="button button-success">
                         ログイン
                     </button>
                 </div>

@@ -14,7 +14,7 @@
                 @csrf
 
                 <div class="input-holder">
-                    <label for="name" class="input-label">ユーザーID</label>
+                    <label for="name" class="input-label text-primary">ユーザーID</label>
 
                     <div>
                         <input id="name" type="text" class="input-form @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="input-holder">
-                    <label for="email" class="input-label">メールアドレス</label>
+                    <label for="email" class="input-label text-primary">メールアドレス</label>
 
                     <div>
                         <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="input-holder">
-                    <label for="password" class="input-label">パスワード</label>
+                    <label for="password" class="input-label text-primary">パスワード</label>
 
                     <div>
                         <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="new-password">
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="input-holder">
-                    <label for="password-confirm" class="input-label">確認用パスワード</label>
+                    <label for="password-confirm" class="input-label text-primary">確認用パスワード</label>
 
                     <div>
                         <input id="password-confirm" type="password" class="input-form" name="password_confirmation" required autocomplete="new-password">
@@ -67,11 +67,10 @@
 
                 <div class="input-holder">
                     <div class="input-label-holder">
-                        {{-- TODO::タイトルの色を青にする。text-primaryが優先順位低い --}}
-                        <label for="password-confirm" class="input-label text-primary">利用規約</label>
+                        <label for="password-confirm" class="input-label text-success">利用規約</label>
                     </div>
                     {{-- TODO::チェックボックスと他文字のスタイル効かせよう --}}
-                    <input class="form-check-input" type="checkbox" name="term" id="term">
+                    <input class="input-checkbox" type="checkbox" name="term" id="term">
                     <a>こちら</a>を一読し、問題なければチェックしてください。
                 </div>
 
@@ -81,7 +80,7 @@
                             パスワードを忘れた
                         </a>
                     @endif
-                    <button type="submit" class="button button-primary">
+                    <button type="submit" class="button button-success">
                         登録
                     </button>
                 </div>

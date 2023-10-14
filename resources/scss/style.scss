@@ -49,7 +49,7 @@ a {
     padding: $space_size_m;
     border-radius: $space_size_m;
     box-shadow: 2px 2px 4px 2px $opacity_shadow;
-    &-primary {
+    &-success {
         color: $white_color;
         background: $sub_color;
     }
@@ -60,6 +60,9 @@ a {
 }
 .text {
     &-primary {
+        color: $theme_color;
+    }
+    &-success {
         color: $sub_color;
     }
 }
@@ -350,7 +353,6 @@ a {
         }
         &-label {
             display: inline-block;
-            color: $theme_color;
             font-size: $font_size_xl;
             font-weight: bold;
             margin-bottom: $space_size_s;
@@ -366,6 +368,44 @@ a {
             font-size: $font_size_xl;
             &-error {
                 border-color: $accent_color;
+            }
+        }
+        // 下記サイトをベタガキ
+        // https://qiita.com/pe-ta/items/74822fd9fce24848d97e
+        // TODO::チェックしたらペケマークを入れたい。
+        &-checkbox {
+            appearance: none;
+            outline: none;
+            display: block;
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            width: $space_size_xl;
+            height: $space_size_xl;
+            border-radius: $space_size_m;
+            &:before {
+                display: block;
+                position: absolute;
+                content: '';
+                width: $space_size_xl;
+                height: $space_size_xl;
+                border: 6px solid $sub_color;
+                border-radius: $space_size_m;
+            }
+            &::after {
+                display: block;
+                content: '';
+                background: $sub_color;
+                
+                width: $space_size_xl;
+                height: $space_size_xl;
+                border-radius: $space_size_m;
+
+                // チェックしてないときは隠す
+                opacity: 0;
+            }
+            &:checked::after {
+                opacity: 1;
             }
         }
         &-error-message {
