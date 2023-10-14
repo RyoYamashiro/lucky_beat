@@ -421,6 +421,17 @@ a {
         justify-content: space-between;
         margin: $space_size_l 0;
     }
+    .checkbox-holder {
+        display: flex;
+    }
+    .strong-text {
+        font-weight: bold;
+        font-size: $font_size_xl;
+    }
+    .annotation-text {
+        margin-left: $space_size_s;
+        font-size: $font_size_l;
+    }
 }
 
 

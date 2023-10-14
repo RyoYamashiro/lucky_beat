@@ -70,8 +70,10 @@
                         <label for="password-confirm" class="input-label text-success">利用規約</label>
                     </div>
                     {{-- TODO::チェックボックスと他文字のスタイル効かせよう --}}
-                    <input class="input-checkbox" type="checkbox" name="term" id="term">
-                    <a>こちら</a>を一読し、問題なければチェックしてください。
+                    <div class="checkbox-holder">
+                        <input class="input-checkbox" type="checkbox" name="term" id="term">
+                        <p class="annotation-text"><a class="strong-text">こちら</a>を確認し、問題なければチェックしてください。</p>
+                    </div>
                 </div>
 
                 <div class="button-holder">
