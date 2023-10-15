@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\front\Index\IndexAction;
+use App\Http\Controllers\User\EditAction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', IndexAction::class)->name('index');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// TODO::user以降をパラメータとしてuser_identified_nameの値にする。
+Route::get('/user/ryoyama/edit', EditAction::class)->name('user.edit');
