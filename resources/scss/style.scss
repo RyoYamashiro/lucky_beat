@@ -12,22 +12,22 @@ $opacity_shadow: rgba(200, 200, 200, .5);
 
 $theme_font_family: 'JetBrains Mono';
 
-$size_3l: 280px;
+$size_3l: 100px;
 
-$font_size_3l: 80px;
-$font_size_xxl: 52px;
-$font_size_xl: 40px;
-$font_size_l: 30px;
-$font_size_m: 20px;
-$font_size_s: 12px;
+$font_size_3l: 1.6rem;
+$font_size_xxl: 1rem;
+$font_size_xl: 0.8rem;
+$font_size_l: 0.5rem;
+$font_size_m: 0.2rem;
+$font_size_s: 0.05rem;
 
-$space_size_4l: 120px;
-$space_size_3l: 100px;
-$space_size_xxl: 80px;
-$space_size_xl: 60px;
-$space_size_l: 40px;
-$space_size_m: 20px;
-$space_size_s: 8px;
+$space_size_4l: 40px;
+$space_size_3l: 33px;
+$space_size_xxl: 27px;
+$space_size_xl: 20px;
+$space_size_l: 13px;
+$space_size_m: 7px;
+$space_size_s: 3px;
 $persent_full: 100%;
 $smartphone_width: 390px;
 
@@ -38,17 +38,23 @@ $smartphone_width: 390px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    @media screen and (min-width: 768px) {
+        width: 50%;
+        margin: 0 auto;
+    }
 }
 a {
     color: $sub_color;
 }
 
+
 .button {
     font-size: $font_size_xl;
     font-weight: bold;
-    padding: $space_size_m;
+    padding: $space_size_m $space_size_l;
     border-radius: $space_size_m;
-    box-shadow: 2px 2px 4px 2px $opacity_shadow;
+    box-shadow: 1px 1px 2px 1px $opacity_shadow;
     &-success {
         color: $white_color;
         background: $sub_color;
@@ -56,6 +62,9 @@ a {
     &-danger {
         color: $white_color;
         background-color: $accent_color;
+    }
+    &-large {
+        font-size: $font_size_xxl;
     }
 }
 .text {
@@ -106,8 +115,8 @@ a {
         .hambergar{
             span {
                 width: $space_size_3l;
-                height: 10px;
-                border-radius: 5px;
+                height: 3px;
+                border-radius: 2px;
                 background-color: $theme_color;
                 position: absolute;
                 right: 0px;
@@ -120,20 +129,21 @@ a {
             }
             
             .span2 {
-            top: 30px;
+            top: 10px;
             }
             
             .span3 {
-            top: 60px;
+            top: 20px;
             }
             .menu-notation {
+            letter-spacing: -1.2px;
             position: absolute;
-            width: $space_size_3l;
-            right: 0px;
-            bottom: 0px;
+            width: 3rem;
+            right: -6px;
+            top: 24px;
             text-align: center;
             font-weight: bold;
-            font-size: $font_size_m;
+            font-size: $font_size_s;
             color: $theme_color;
             }
         }
@@ -149,7 +159,7 @@ a {
     margin-bottom: $space_size_l;
     height: $size_3l;
     background: $white_color;
-    border-radius: $space_size_s;
+    border-radius: $space_size_m;
     box-shadow: 2px 2px 4px 2px $opacity_shadow;
     display: flex;
     .beat-left-side {
@@ -162,12 +172,18 @@ a {
             display: flex;
             justify-content: space-between;
             .fav-icon-holder {
+                position: relative;
+                height: $space_size_xl;
+                width: $space_size_xl;
                 display: inline-block;
-                padding: $space_size_s;
+                padding: 0 $space_size_s;
                 margin: $space_size_s;
                 background: $white_color;
-                border-radius: $space_size_xxl;
+                border-radius: $space_size_xl;
                 .fav-icon {
+                    position: absolute;
+                    top: 4px;
+                    left: 3.5px;
                     color: $accent_color;
                     font-size: $font_size_xl;
                 }
@@ -183,18 +199,18 @@ a {
             // TODO::少し大きくしたいけど優先順位低い
             display: inline-block;
             background-color: $theme_color;
-            width: 150px;
-            height: 150px;
-            border-radius: 100px;
+            width: 55px;
+            height: 55px;
+            border-radius: 28px;
             position: relative;
             top: -3%;
             left: 22%;
             .play-icon {
                 color: $sub_color;
-                font-size: 95px;
+                font-size: $font_size_3l;
                 position: absolute;
-                top: 18%;
-                left: 27%;
+                top: 27%;
+                left: 33%;
             }
         }       
 
@@ -215,6 +231,7 @@ a {
     }
 
     .beat-right-side {
+        width: 100%;
         display: flex;
         flex-flow: column;
         position: relative;
@@ -242,7 +259,6 @@ a {
         }
         .hash-tag-badge {
             padding: $space_size_s;
-            margin-right: $space_size_s;
             border-radius: $space_size_s;
             font-size: $font_size_m;
             font-weight: bold;
@@ -250,9 +266,9 @@ a {
             color: $sub_color;
         }
         .beat-context {
-            margin: $space_size_m $space_size_s 0 0;
+            margin: $space_size_s $space_size_s 0 0;
             color: $black_color;
-            font-size: $font_size_m;
+            font-size: $font_size_s;
         }
         .baet-right-lower {
             display: flex;
@@ -261,7 +277,7 @@ a {
                 .price-badge {
                 color: $white_color;
                 background: $accent_color;
-                border-radius: $space_size_m 0 0 0;
+                border-radius: $space_size_m 0 $space_size_m 0;
             }    
         }
     }
@@ -288,7 +304,7 @@ a {
             font-size: $font_size_xxl;
             color: $white_color;
             position: absolute;
-            top: 10%;
+            top: 14%;
             left: 34%;
         }
     }
@@ -297,8 +313,8 @@ a {
 .search-button-holder {
     position: absolute;
     background: $sub_color;
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     bottom: -$space_size_l;
     border-radius: $space_size_3l;
     .search-icon {
@@ -343,7 +359,7 @@ a {
             border-radius: $space_size_m;
             color: $white_color;
             background: $theme_color;
-            font-size: $font_size_xl;
+            font-size: $font_size_xxl;
             font-weight: bold;
         }
     }
@@ -353,7 +369,7 @@ a {
         }
         &-label {
             display: inline-block;
-            font-size: $font_size_xl;
+            font-size: $font_size_xxl;
             font-weight: bold;
             margin-bottom: $space_size_s;
         }
@@ -362,10 +378,10 @@ a {
         }
         &-form {
             width: $persent_full;
-            padding: 0 $space_size_s;
+            padding: $space_size_s;
             border-radius: $space_size_m;
-            border: 6px solid $theme_color;
-            font-size: $font_size_xl;
+            border: 2px solid $theme_color;
+            font-size: $font_size_xxl;
             &-error {
                 border-color: $accent_color;
             }
@@ -389,7 +405,7 @@ a {
                 content: '';
                 width: $space_size_xl;
                 height: $space_size_xl;
-                border: 6px solid $sub_color;
+                border: 2px solid $sub_color;
                 border-radius: $space_size_m;
             }
             &::after {
@@ -410,7 +426,6 @@ a {
         }
         &-error-message {
             display: inline-block;
-            margin-top: $space_size_s;
             color: $accent_color;
             font-weight: bold;
             font-size: $font_size_l;
@@ -420,6 +435,7 @@ a {
         display: flex;
         justify-content: space-between;
         margin: $space_size_l 0;
+        align-items: flex-end;
     }
     .checkbox-holder {
         display: flex;

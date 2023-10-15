@@ -78,13 +78,17 @@
 
                 <div class="button-holder">
                     @if (Route::has('password.request'))
-                        <a class="button button-danger" href="{{ route('password.request') }}">
-                            パスワードを忘れた
-                        </a>
+                        <div>
+                            <a class="button button-danger" href="{{ route('password.request') }}">
+                                パスワードを忘れた
+                            </a>
+                        </div>
                     @endif
-                    <button type="submit" class="button button-success">
-                        登録
-                    </button>
+                    <div>
+                        <button type="submit" class="button button-success button-large">
+                            登録
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
