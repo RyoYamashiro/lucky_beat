@@ -16,53 +16,45 @@
                 <div class="input-holder">
                     <label for="name" class="input-label text-primary">ユーザーID</label>
 
-                    <div>
-                        <input id="name" type="text" class="input-form @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                        {{-- @error('name') --}}
-                            <span class="input-error-message" role="alert">
-                                {{-- <strong>{{ $message }}</strong> --}}
-                                文字列で入力してください。
-                            </span>
-                        {{-- @enderror --}}
-                    </div>
+                    <input id="name" type="text" class="input-form @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <span class="annotation-text">※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。</span>
+                    {{-- @error('name') --}}
+                        <span class="input-error-message" role="alert">
+                            {{-- <strong>{{ $message }}</strong> --}}
+                            文字列で入力してください。
+                        </span>
+                    {{-- @enderror --}}
                 </div>
                 <div class="input-holder">
                     <label for="email" class="input-label text-primary">メールアドレス</label>
 
-                    <div>
-                        <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                        {{-- @error('email') --}}
-                            <span class="input-error-message" role="alert">
-                                {{-- <strong>{{ $message }}</strong> --}}
-                                メールアドレス形式で入力してください。
-                            </span>
-                        {{-- @enderror --}}
-                    </div>
+                    {{-- @error('email') --}}
+                        <span class="input-error-message" role="alert">
+                            {{-- <strong>{{ $message }}</strong> --}}
+                            メールアドレス形式で入力してください。
+                        </span>
+                    {{-- @enderror --}}
                 </div>
 
                 <div class="input-holder">
                     <label for="password" class="input-label text-primary">パスワード</label>
 
-                    <div>
-                        <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="new-password">
+                    <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="new-password">
 
-                        {{-- @error('email') --}}
-                            <span class="input-error-message" role="alert">
-                                {{-- <strong>{{ $message }}</strong> --}}
-                                パスワードかメールアドレスが誤っております。
-                            </span>
-                        {{-- @enderror --}}
-                    </div>
+                    {{-- @error('email') --}}
+                        <span class="input-error-message" role="alert">
+                            {{-- <strong>{{ $message }}</strong> --}}
+                            パスワードかメールアドレスが誤っております。
+                        </span>
+                    {{-- @enderror --}}
                 </div>
 
                 <div class="input-holder">
                     <label for="password-confirm" class="input-label text-primary">確認用パスワード</label>
 
-                    <div>
-                        <input id="password-confirm" type="password" class="input-form" name="password_confirmation" required autocomplete="new-password">
-                    </div>
+                    <input id="password-confirm" type="password" class="input-form" name="password_confirmation" required autocomplete="new-password">
                 </div>
 
                 <div class="input-holder">
