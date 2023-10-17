@@ -48,7 +48,6 @@ a {
     color: $sub_color;
 }
 
-
 .button {
     font-size: $font_size_xl;
     font-weight: bold;
@@ -458,6 +457,9 @@ a {
         justify-content: space-between;
         margin: $space_size_l 0;
         align-items: flex-end;
+        .button:last-child {
+            margin-left: auto;
+        }
     }
     .checkbox-holder {
         display: flex;
