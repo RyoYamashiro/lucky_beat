@@ -28,10 +28,9 @@
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
-                <span class="hash-tag-badge">#hash_tag</span>
             </div>
             <div class="beat-context">
-            ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。
+                ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
             <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>
@@ -66,10 +65,9 @@
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
-                <span class="hash-tag-badge">#hash_tag</span>
             </div>
             <div class="beat-context">
-            ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。
+                ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
             <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>
@@ -102,10 +100,9 @@
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
-                <span class="hash-tag-badge">#hash_tag</span>
             </div>
             <div class="beat-context">
-            ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。
+                ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
             <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>
@@ -139,10 +136,9 @@
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
-                <span class="hash-tag-badge">#hash_tag</span>
             </div>
             <div class="beat-context">
-            ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。
+                ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
             <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>
@@ -177,10 +173,9 @@
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
-                <span class="hash-tag-badge">#hash_tag</span>
             </div>
             <div class="beat-context">
-            ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。
+                ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
             <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>
@@ -215,10 +210,9 @@
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
                 <span class="hash-tag-badge">#hash_tag</span>
-                <span class="hash-tag-badge">#hash_tag</span>
             </div>
             <div class="beat-context">
-            ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。ビートの説明文です。
+                ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
             <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>

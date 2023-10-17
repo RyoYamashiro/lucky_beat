@@ -69,20 +69,26 @@
                     <div class="input-label-holder">
                         <label for="password-confirm" class="input-label text-success">利用規約</label>
                     </div>
-                    {{-- TODO::チェックボックスと他文字のスタイル効かせよう --}}
-                    <input class="input-checkbox" type="checkbox" name="term" id="term">
-                    <a>こちら</a>を一読し、問題なければチェックしてください。
+                    {{-- TODO::チェックボックスと他文字のスタイル効かせよう fontawesomeで良いかも --}}
+                    <div class="checkbox-holder">
+                        <input class="input-checkbox" type="checkbox" name="term" id="term">
+                        <p class="annotation-text"><a class="strong-text">こちら</a>を確認し、問題なければチェックしてください。</p>
+                    </div>
                 </div>
 
                 <div class="button-holder">
                     @if (Route::has('password.request'))
-                        <a class="button button-danger" href="{{ route('password.request') }}">
-                            パスワードを忘れた
-                        </a>
+                        <div>
+                            <a class="button button-danger" href="{{ route('password.request') }}">
+                                パスワードを忘れた
+                            </a>
+                        </div>
                     @endif
-                    <button type="submit" class="button button-success">
-                        登録
-                    </button>
+                    <div>
+                        <button type="submit" class="button button-success button-large">
+                            登録
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
