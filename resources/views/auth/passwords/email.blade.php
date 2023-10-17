@@ -19,16 +19,14 @@
 
                 <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                {{-- @error('email') --}}
+                @error('email')
                     <span class="input-error-message" role="alert">
-                        {{-- <strong>{{ $message }}</strong> --}}
-                        メールアドレス形式で入力してください
+                        {{ $message }}
                     </span>
-                {{-- @enderror --}}
+                @enderror
             </div>
             <div class="button-holder">
                 <button type="submit" class="button button-success">
-                    {{-- TODO::右端に置く --}}
                     トークンをメールに送る
                 </button>
             </div>
