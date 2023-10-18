@@ -1,5 +1,5 @@
 <header class="header">
-    <h1 class="logo">LuckyBeat</h1>
+    <h1 class="logo"><a class="logo-link" href="{{ route('index')}}">LuckyBeat</a></h1>
     <div class="header-right-part">
         {{-- TODO::@authにする --}}
         <a class="user-icon-frame">

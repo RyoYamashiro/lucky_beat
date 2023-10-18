@@ -101,10 +101,12 @@ a {
     justify-content: space-between;
     align-items: center;
     .logo{
-        color: $theme_color;
         font-weight: bold;
         font-size: $font_size_3l;
         font-family: $theme_font_family;
+        &-link {
+            color: $theme_color;
+        }
     }
     
     .header-right-part{
@@ -456,7 +458,6 @@ a {
             cursor: pointer;
             width: $space_size_xl;
             height: $space_size_xl;
-            border-radius: $space_size_m;
             &:before {
                 display: block;
                 position: absolute;
@@ -469,17 +470,24 @@ a {
             &::after {
                 display: block;
                 content: '';
-                background: $sub_color;
-                
+                position: absolute;
+
                 width: $space_size_xl;
                 height: $space_size_xl;
-                border-radius: $space_size_m;
 
                 // チェックしてないときは隠す
                 opacity: 0;
             }
             &:checked::after {
                 opacity: 1;
+                
+                width: $space_size_l;
+                bottom: $space_size_m;
+                left: $space_size_s;
+                border-right: 3px solid $sub_color;
+                border-bottom: 3px solid $sub_color;
+                transform: rotate(45deg);
+
             }
         }
         &-icon-form {
