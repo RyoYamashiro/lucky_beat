@@ -5,7 +5,7 @@
         <a class="user-icon-frame">
             {{-- <img src=""> --}}
         </a>
-        <div class="hambergar">
+        <div class="hamburger js-toggle-hamburger-menu">
             <!-- ハンバーガーアイコン -->
             <span class="span1"></span>
             <span class="span2"></span>

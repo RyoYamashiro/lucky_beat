@@ -12,7 +12,9 @@ const tailwindcss = require('tailwindcss');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js').autoload({
+        "jquery": [ '$', 'window.jQuery' ],
+    })
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps()
     .sass('resources/scss/app.scss', 'public/css', [
