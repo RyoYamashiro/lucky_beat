@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="white-form-holder">
+<div class="white-holder">
 
     <div class="form-title">
         <span class="form-title-text">アカウント設定</span>
