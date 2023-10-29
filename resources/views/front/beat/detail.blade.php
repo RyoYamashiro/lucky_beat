@@ -2,19 +2,24 @@
 
 @section('content')
     <div class="white-holder">
-    &lt;戻る
-    通常
-    カスタム
+    <div class="content-haeder">
+        <a class="back-link">&lt;戻る</a>
+        <div class="toggle-swtich">
+            <span class="toggle-swtich-item active">通常</span>
+            <span class="toggle-swtich-item">カスタム</span>
+        </div>
+    </div>
     画像
     ビートのタイトル
     ビートの尺
     戻るボタン
     再生ボタン
     リピートボタン
-    #hash_tag
-    #hash_tag
-    #hash_tag
-    
+    <span class="hash-tag-badge">#hash_tag</span>
+    <span class="hash-tag-badge">#hash_tag</span>
+    <span class="hash-tag-badge">#hash_tag</span>
+
     ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明
+    ダウンロード
     </div>
 @endsection
