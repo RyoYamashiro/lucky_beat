@@ -15,7 +15,11 @@
         <h2 class="beat-title">
             ビートのタイトル
         </h2>
-        ビートの尺
+        <h3 class="audio-length">
+            <div class="play-done"></div>
+            <span class="play-now"></span>
+            <div class="play-yet"></div>
+        </h3>
         <i class="fad fa-solid fa-backward-step"></i>
         <i class="fa fa-solid fa-play"></i>
         <i class="fad fa-solid fa-repeat" aria-hidden="true"></i>

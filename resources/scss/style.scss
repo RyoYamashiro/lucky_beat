@@ -13,7 +13,7 @@ $opacity_color: rgba(200, 200, 200, .5);
 $theme_font_family: 'JetBrains Mono';
 
 $size_3l: 100px;
-$size_5l: 200px;
+$size_5l: 260px;
 
 $font_size_3l: 1.6rem;
 $font_size_xxl: 1rem;
@@ -578,6 +578,30 @@ a {
         color: $theme_color;
         font-size: $font_size_3l;
         font-weight: bold;
+    }
+    .audio-length {
+        height: $space_size_xl;
+        background: $theme_color;
+        display: flex;
+        position: relative;
+        width: $size_5l;
+        margin: $space_size_m auto;
+        .play-done {
+            height: 100%;
+            width: $size_3l;
+            background: $sub_color;
+        }
+        .play-now {
+            position: absolute;
+            top: -$space_size_m;
+            border: 2px solid $sub_color;
+            border-radius: $space_size_s;
+            height: $space_size_3l;
+            box-sizing: border-box;
+            background: $accent_color;
+            width: $space_size_m;
+            margin-left: $size_3l;
+        }
     }
 }
 
