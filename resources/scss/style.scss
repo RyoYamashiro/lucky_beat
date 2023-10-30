@@ -13,6 +13,7 @@ $opacity_color: rgba(200, 200, 200, .5);
 $theme_font_family: 'JetBrains Mono';
 
 $size_3l: 100px;
+$size_5l: 200px;
 
 $font_size_3l: 1.6rem;
 $font_size_xxl: 1rem;
@@ -562,3 +563,21 @@ a {
         }
     }
 }
+
+.beat-detail{
+    .beat-main-image {
+        margin-top: $space_size_l;
+        width: $size_5l;
+        height: $size_5l;
+        border-radius: $space_size_m;
+        background: $opacity_color;
+        margin: $space_size_xl auto $space_size_m;
+    }
+    .beat-title {
+        text-align: center;
+        color: $theme_color;
+        font-size: $font_size_3l;
+        font-weight: bold;
+    }
+}
+
