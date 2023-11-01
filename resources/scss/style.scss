@@ -12,9 +12,13 @@ $opacity_color: rgba(200, 200, 200, .5);
 
 $theme_font_family: 'JetBrains Mono';
 
+$size_xxl: 70px;
 $size_3l: 100px;
 $size_5l: 260px;
 
+$font_size_6l: 3.4rem;
+$font_size_5l: 2.4rem;
+$font_size_4l: 2rem;
 $font_size_3l: 1.6rem;
 $font_size_xxl: 1rem;
 $font_size_xl: 0.8rem;
@@ -304,6 +308,14 @@ a {
                 margin-bottom: $space_size_s;
             }
         }
+        .hash-tag-badge {
+            padding: $space_size_s;
+            border-radius: $space_size_s;
+            font-size: $font_size_m;
+            font-weight: bold;
+            background: $theme_color;
+            color: $sub_color;
+        }
         .user-icon-frame {
             position: absolute;
             right: 0;
@@ -532,14 +544,6 @@ a {
     }
 }
 
-.hash-tag-badge {
-    padding: $space_size_s;
-    border-radius: $space_size_s;
-    font-size: $font_size_m;
-    font-weight: bold;
-    background: $theme_color;
-    color: $sub_color;
-}
 
 .toggle-swtich {
     display: flex;
@@ -549,12 +553,12 @@ a {
     text-align: center;
     color: $white_color;
     font-size: $font_size_xxl;
-    // todo::marginしてるけど厳密に真ん中ではない。
     margin: 0 auto;
     &-item {
         display: block;
-        padding: 0 $space_size_m;
-        border-radius: $space_size_l;
+        padding: $space_size_s;
+        box-sizing: border-box;
+        border-radius: $space_size_xl;
         width: $size_3l;
         font-weight: bold;
         box-sizing: border-box;
@@ -579,7 +583,7 @@ a {
         font-size: $font_size_3l;
         font-weight: bold;
     }
-    .audio-length {
+    .beat-length {
         height: $space_size_xl;
         background: $theme_color;
         display: flex;
@@ -601,6 +605,82 @@ a {
             background: $accent_color;
             width: $space_size_m;
             margin-left: $size_3l;
+        }
+    }
+    .beat-operation-button-holder {
+        width: $size_5l;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        position: relative;
+        .operation-button {
+            position: relative;
+            background: $theme_color;
+            border-radius: $size_xxl;
+            width: $size_xxl;
+            height: $size_xxl;
+            &-big {
+                width: $size_3l;
+                height: $size_3l;
+            }
+            &-middle {
+                top: $space_size_l;
+            }
+            &-icon {
+                font-size: $font_size_5l;
+                font-weight: bold;
+                color: $sub_color;
+                position: absolute;
+                &.big-icon {
+                    font-size: $font_size_6l;
+                }
+            }
+            .backward-step-icon {
+                left: 30%;
+                top: 24%;
+            }
+            .play-icon {
+                left: 33%;
+                top: 24%;
+            }
+            .repeat-icon {
+                left: 24%;
+                top: 24%;
+            }
+        }
+    }
+    .hash-tag-holder {
+        width: $size_5l;
+        margin: $space_size_l auto $space_size_m;
+        display: flex;
+        justify-content: space-between;
+        .hash-tag-badge {
+            padding: $space_size_s;
+            border-radius: $space_size_s;
+            font-size: $font_size_xl;
+            font-weight: bold;
+            background: $theme_color;
+            color: $sub_color;
+        }
+    }
+    .beat-context {
+        color: $black_color;
+        font-size: $font_size_xxl;
+        width: $size_5l;
+        margin: 0 auto;
+    }
+    .bottom-button-holder {
+        width: $size_5l;
+        margin: $space_size_m auto;
+        .download-button {
+            width: $persent_full;
+            padding: $space_size_m;
+            border-radius: $space_size_m;
+            color: $white_color;
+            font-size: $font_size_xxl;
+            font-weight: bold;
+            background: $sub_color;
+            box-shadow: 1px 1px 2px 1px $opacity_color;    
         }
     }
 }

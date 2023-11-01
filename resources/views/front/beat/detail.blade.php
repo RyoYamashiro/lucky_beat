@@ -15,19 +15,35 @@
         <h2 class="beat-title">
             ビートのタイトル
         </h2>
-        <h3 class="audio-length">
+        <h3 class="beat-length">
             <div class="play-done"></div>
             <span class="play-now"></span>
             <div class="play-yet"></div>
         </h3>
-        <i class="fad fa-solid fa-backward-step"></i>
-        <i class="fa fa-solid fa-play"></i>
-        <i class="fad fa-solid fa-repeat" aria-hidden="true"></i>
-        <span class="hash-tag-badge">#hash_tag</span>
-        <span class="hash-tag-badge">#hash_tag</span>
-        <span class="hash-tag-badge">#hash_tag</span>
+        <div class="beat-operation-button-holder">
+            <span class="operation-button operation-button-middle">
+                <i class="fad fa-solid fa-backward-step backward-step-icon operation-button-icon"></i>
+            </span>
 
-        ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明
-        ダウンロード
+            <span class="operation-button operation-button-big">
+                <i class="fa fa-solid fa-play play-icon operation-button-icon big-icon"></i>
+            </span>
+            <span class="operation-button operation-button-middle">
+                <i class="fad fa-solid fa-repeat repeat-icon operation-button-icon"></i>
+            </span>
+        </div>
+        <div class="hash-tag-holder">
+            <span class="hash-tag-badge">#hash_tag</span>
+            <span class="hash-tag-badge">#hash_tag</span>
+            <span class="hash-tag-badge">#hash_tag</span>
+        </div>
+        <div class="beat-context">
+            ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明ビートの説明
+        </div>
+        <div class="bottom-button-holder">
+            <button class="download-button">
+                ダウンロード
+            </button>
+        </div>
     </div>
 @endsection
