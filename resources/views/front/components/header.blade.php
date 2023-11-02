@@ -12,12 +12,10 @@
             <span class="span3"></span>
             <p class="menu-notation">メニュー</p>
         </div>
-
-        <nav class="nav-menu js-nav-menu">
-            <ul class="menu">
-                <li class="menu-item"><a class="menu-link">トップ</a></li>
-            </ul>
-        </nav>
-
     </div>
+    <nav class="nav-menu js-nav-menu">
+        <ul class="menu">
+            <li class="menu-item"><a class="menu-link">トップ</a></li>
+        </ul>
+    </nav>
 </header>

@@ -12,8 +12,10 @@ $opacity_color: rgba(200, 200, 200, .5);
 
 $theme_font_family: 'JetBrains Mono';
 
+$size_xl: 50px;
 $size_xxl: 70px;
 $size_3l: 100px;
+$size_4l: 160px;
 $size_5l: 260px;
 
 $font_size_6l: 3.4rem;
@@ -26,6 +28,7 @@ $font_size_l: 0.5rem;
 $font_size_m: 0.2rem;
 $font_size_s: 0.05rem;
 
+$space_size_5l: 60px;
 $space_size_4l: 40px;
 $space_size_3l: 33px;
 $space_size_xxl: 27px;
@@ -102,12 +105,13 @@ a {
 }
 
 .header {
+    width: 100%;
+    position: fixed;
     background: $white_color;
     padding: $space_size_3l $space_size_l $space_size_l;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     .logo{
         font-weight: bold;
         font-size: $font_size_3l;
@@ -191,11 +195,10 @@ a {
           transform: translateX(-100%);
           z-index: 2;
         }
-
         .menu {
             display: block;
-            align-items: center;
             font-size: $font_size_3l;
+            width: 100%;
             &-link {
                 -webkit-font-smoothing: initial;
                 display: block;
@@ -213,7 +216,8 @@ a {
 }
 
 .main-container {
-    padding: $space_size_l;
+    margin-top: $size_3l;
+    padding: 0 $space_size_l;
     position: relative;
 }
 
@@ -401,7 +405,6 @@ a {
 .white-holder{
     background: $white_color;
     border-radius: $space_size_m;
-    margin-top: $space_size_m;
     box-sizing: border-box;
     padding: $space_size_xl;
     .form-header {
