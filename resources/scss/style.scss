@@ -112,6 +112,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // TODO::すごい無根拠な数字だから直そう。
+    z-index: 30;
     .logo{
         font-weight: bold;
         font-size: $font_size_3l;
@@ -536,7 +538,6 @@ a {
         font-size: $font_size_l;
     }
     .content-haeder {
-        // TODO::なぜか普通のheaderより手前に表示される。
         display: flex;
         position: relative;
         .back-link {
