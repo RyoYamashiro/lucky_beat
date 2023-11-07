@@ -536,6 +536,7 @@ a {
         font-size: $font_size_l;
     }
     .content-haeder {
+        // TODO::なぜか普通のheaderより手前に表示される。
         display: flex;
         position: relative;
         .back-link {
@@ -665,6 +666,10 @@ a {
                 left: 18%;
                 top: 18%;
             }
+            .mute-icon {
+                left: 18%;
+                top: 23%;
+            }
         }
     }
     .hash-tag-holder {
@@ -702,11 +707,14 @@ a {
         }
     }
     .custom-track-holder {
-        width: $size_4l;
-        margin: 0 auto $space_size_xl;
+        width: $size_5l;
+        margin: $space_size_xl auto 0;
         position: relative;
         &-culomn {
             display: flex;
+        }
+        &:last-child{
+            justify-content: center;
         }
     }
 }

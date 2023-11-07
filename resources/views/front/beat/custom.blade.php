@@ -33,25 +33,27 @@
             </span>
         </div>
         <div class="custom-track-holder beat-operation-button-holder">
-            <div class="custom-track-culomn operation-button">
-                <i class="fa-solid fa-drum operation-button-icon drum-icon"></i>
+            <div class="custom-track-culomn operation-button operation-button-big">
+                <i class="fa-solid fa-drum operation-button-icon drum-icon big-icon"></i>
             </div>
-            <div class="custom-track-culomn operation-button">
-                <i class="fa-solid fa-music operation-button-icon music-icon"></i>
+            <div class="custom-track-culomn operation-button operation-button-big">
+                <i class="fa-solid fa-music operation-button-icon music-icon big-icon"></i>
             </div>
         </div>
 
         <div class="custom-track-holder beat-operation-button-holder">
         
-            <div class="custom-track-culomn operation-button">
-                <i class="fa-solid fa-guitar operation-button-icon guitar-icon"></i>
+            <div class="custom-track-culomn operation-button operation-button-big">
+                <i class="fa-solid fa-guitar operation-button-icon guitar-icon big-icon"></i>
             </div>
-            <div class="custom-track-culomn operation-button">
-                <i class="fa-solid fa-hands-clapping operation-button-icon clapping-icon"></i>
+            <div class="custom-track-culomn operation-button operation-button-big">
+                <i class="fa-solid fa-hands-clapping operation-button-icon clapping-icon big-icon"></i>
             </div>
         </div>
-
-            <i class="fa-solid fa-volume-xmark operation-button operation-button-icon"></i> 
+        <div class="custom-track-holder beat-operation-button-holder">
+            <div class="custom-track-culomn operation-button operation-button-big">
+            <i class="fa-solid fa-volume-xmark operation-button-icon mute-icon big-icon"></i> 
+            </div>
         </div>
         {{-- <div class="hash-tag-holder">
             <span class="hash-tag-badge">#hash_tag</span>
