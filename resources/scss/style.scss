@@ -649,6 +649,22 @@ a {
                 left: 24%;
                 top: 24%;
             }
+            .drum-icon {
+                left: 19%;
+                top: 19%;
+            }
+            .music-icon {
+                left: 20%;
+                top: 20%;
+            }
+            .guitar-icon {
+                left: 20%;
+                top: 20%;
+            }
+            .clapping-icon {
+                left: 18%;
+                top: 18%;
+            }
         }
     }
     .hash-tag-holder {
@@ -683,6 +699,14 @@ a {
             font-weight: bold;
             background: $sub_color;
             box-shadow: 1px 1px 2px 1px $opacity_color;    
+        }
+    }
+    .custom-track-holder {
+        width: $size_4l;
+        margin: 0 auto $space_size_xl;
+        position: relative;
+        &-culomn {
+            display: flex;
         }
     }
 }

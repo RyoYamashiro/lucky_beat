@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\front\Beat\DetailAction;
+use App\Http\Controllers\front\Beat\CustomAction;
 use App\Http\Controllers\front\contact\ShowContactFormAction;
 use App\Http\Controllers\front\Index\IndexAction;
 use App\Http\Controllers\User\EditAction;
@@ -24,4 +25,5 @@ Auth::routes();
 Route::get('/user/ryoyama/edit', EditAction::class)->name('user.edit');
 
 Route::get('/beat/noon/detail', DetailAction::class)->name('beat.detail');
+Route::get('/beat/noon/custom', CustomAction::class)->name('beat.custom');
 Route::get('/contact', ShowContactFormAction::class)->name('contact');
