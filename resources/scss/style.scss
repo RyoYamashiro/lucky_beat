@@ -16,7 +16,8 @@ $size_xl: 50px;
 $size_xxl: 70px;
 $size_3l: 100px;
 $size_4l: 160px;
-$size_5l: 260px;
+$size_5l: 210px;
+$size_6l: 260px;
 
 $font_size_6l: 3.4rem;
 $font_size_5l: 2.4rem;
@@ -221,6 +222,9 @@ a {
     margin-top: $size_3l;
     padding: 0 $space_size_l;
 }
+.user-beat-list-holder {
+    margin-top: $space_size_l;
+}
 
 .beat-list-item{
     margin-bottom: $space_size_l;
@@ -408,6 +412,21 @@ a {
     border-radius: $space_size_m;
     box-sizing: border-box;
     padding: $space_size_xl;
+    margin-bottom: $space_size_l;
+    &.justify-space-between {
+        display: flex;
+        justify-content: space-between;
+        .user-icon-holder {
+            width: $size_3l;
+            height: $size_3l;
+            border-radius: $size_3l;
+            background: $opacity_color;
+            box-shadow: 0px 0px 2px 0px $opacity_color inset;
+        }
+        .user-info {
+            width: $size_5l;
+        }
+    }
     .form-header {
         margin-top: $space_size_l;
         text-align: right;
@@ -537,46 +556,46 @@ a {
         margin-left: $space_size_s;
         font-size: $font_size_l;
     }
-    .content-haeder {
-        display: flex;
-        position: relative;
-        .back-link {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-    }
 }
 
 
-.toggle-swtich {
+.switch-holder {
     display: flex;
-    background: $theme_color;
-    padding: $space_size_s;
-    border-radius: $space_size_xl;
-    text-align: center;
-    color: $white_color;
-    font-size: $font_size_xxl;
-    margin: 0 auto;
-    &-item {
-        display: block;
+    position: relative;
+    .toggle-switch {
+        display: flex;
+        background: $theme_color;
         padding: $space_size_s;
-        box-sizing: border-box;
         border-radius: $space_size_xl;
-        width: $size_3l;
-        font-weight: bold;
-        box-sizing: border-box;
-        &.active {
-            background: $sub_color;
+        text-align: center;
+        color: $white_color;
+        font-size: $font_size_xxl;
+        margin: 0 auto;
+        &-item {
+            display: block;
+            padding: $space_size_s;
+            box-sizing: border-box;
+            border-radius: $space_size_xl;
+            width: $size_3l;
+            font-weight: bold;
+            box-sizing: border-box;
+            &.active {
+                background: $sub_color;
+            }
         }
+    }
+    .back-link {
+        position: absolute;
+        left: 0;
+        top: 0;
     }
 }
 
 .beat-detail{
     .beat-main-image {
         margin-top: $space_size_l;
-        width: $size_5l;
-        height: $size_5l;
+        width: $size_6l;
+        height: $size_6l;
         border-radius: $space_size_m;
         background: $opacity_color;
         margin: $space_size_xl auto $space_size_m;
@@ -592,7 +611,7 @@ a {
         background: $theme_color;
         display: flex;
         position: relative;
-        width: $size_5l;
+        width: $size_6l;
         margin: $space_size_m auto;
         .play-done {
             height: 100%;
@@ -612,7 +631,7 @@ a {
         }
     }
     .beat-operation-button-holder {
-        width: $size_5l;
+        width: $size_6l;
         display: flex;
         margin: 0 auto;
         justify-content: space-between;
@@ -674,7 +693,7 @@ a {
         }
     }
     .hash-tag-holder {
-        width: $size_5l;
+        width: $size_6l;
         margin: $space_size_l auto $space_size_m;
         display: flex;
         justify-content: space-between;
@@ -690,11 +709,11 @@ a {
     .beat-context {
         color: $black_color;
         font-size: $font_size_xxl;
-        width: $size_5l;
+        width: $size_6l;
         margin: 0 auto;
     }
     .bottom-button-holder {
-        width: $size_5l;
+        width: $size_6l;
         margin: $space_size_m auto;
         .download-button {
             width: $persent_full;
@@ -708,7 +727,7 @@ a {
         }
     }
     .custom-track-holder {
-        width: $size_5l;
+        width: $size_6l;
         margin: $space_size_xl auto 0;
         position: relative;
         &-culomn {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\front\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EditAction extends Controller
+class DetailAction extends Controller
 {
     /**
      * Handle the incoming request.
@@ -15,6 +15,7 @@ class EditAction extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('front.user.edit');
+        return view('front.user.detail');
+    
     }
 }

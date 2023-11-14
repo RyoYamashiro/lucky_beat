@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="white-holder beat-detail">
-        <div class="content-haeder">
+        <div class="switch-holder">
             <a class="back-link">&lt;戻る</a>
-            <div class="toggle-swtich">
-                <span class="toggle-swtich-item active">通常</span>
-                <span class="toggle-swtich-item">カスタム</span>
+            <div class="toggle-switch">
+                <span class="toggle-switch-item active">通常</span>
+                <span class="toggle-switch-item">カスタム</span>
             </div>
         </div>
 
