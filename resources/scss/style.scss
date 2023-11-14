@@ -425,6 +425,15 @@ a {
         }
         .user-info {
             width: $size_5l;
+            flex-flow: column;
+            .user-name {
+                font-size: $font_size_xxl;
+                font-weight: bold;
+                margin-bottom: $space_size_s;
+            }
+            .user-bio {
+                font-size: $font_size_l;
+            }
         }
     }
     .form-header {
@@ -738,4 +747,3 @@ a {
         }
     }
 }
-

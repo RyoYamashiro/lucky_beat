@@ -7,9 +7,9 @@
     </div>
 
     <div class="user-info">
-        <p class="input-label text-primary">ryo_lio</p>
+        <p class="user-name text-primary">ryo_lio</p>
 
-        <span class="annotation-text">
+        <span class="user-bio">
             福岡市でひっそり隠居しながら趣味でビートを作ってます。<br>
             ちょっとアシッドジャズ調なものが好みで作ってます。
         </span>
