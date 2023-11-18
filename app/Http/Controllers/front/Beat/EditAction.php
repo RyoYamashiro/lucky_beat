@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\front\User;
+namespace App\Http\Controllers\front\Beat;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,6 +15,6 @@ class EditAction extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('front.user.edit');
+        return view('front.beat.edit');
     }
 }
