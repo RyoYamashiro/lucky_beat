@@ -50,10 +50,19 @@
                 </div>
         </div>
 
-            <div class="input-holder">
+        
+            <div class="input-holder input-required">
                 <label for="title" class="input-label text-primary">サウンド</label>
-
-                <input id="name" type="text" class="input-form @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                <div class="justify-space-between">
+                    <label class="input-file-holder">
+                        <input id="name" type="file" class="input-file @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                        サンプル
+                    </label>
+                    <label class="input-file-holder">
+                        <input id="name" type="file" class="input-file @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                        メイン
+                    </label>
+                </div>
                 {{-- @error('title') --}}
                     <span class="input-error-message" role="alert">
                         {{-- <strong>{{ $message }}</strong> --}}

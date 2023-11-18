@@ -577,6 +577,26 @@ a {
                 content: '';
               }
         }
+
+        &-file-holder {
+            width: $persent_half;
+            height: $size_xxl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $space_size_l;
+            color: $sub_color;
+            border: $sub_color 3px solid;
+            background-color: $white_color;
+            cursor: pointer;
+            margin-right: $space_size_l;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        &-file {
+            display: none;
+        }
     
         &-icon-form {
             width: $size_3l;
