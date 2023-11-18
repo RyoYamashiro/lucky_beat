@@ -10,49 +10,45 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            @include('front.components.form.text', [
+            @include('front.components.form.input', [
                 'name' => 'title',
                 'label' => 'ビートのタイトル',
+                'type' => 'text',
                 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
                 'required' => true
             ])
             
-            <div class="input-holder">
-                <label for="bpm" class="input-label text-primary">BPM</label>
+            <div class="justify-space-between">
+                @include('front.components.form.input_half', [
+                    'name' => 'bpm',
+                    'label' => 'BPM',
+                    'type' => 'number',
+                    'context' => '',
+                    'required' => true
+                ])
 
-                <div>
-                    <input id="bpm" type="number" class="input-form" name="bpm" value="{{ old('email') }}" required autocomplete="bpm" autofocus>
+                <div class="input-holder input-half">
+                    <label for="custom" class="input-label text-primary">カスタムビート</label>
 
-                    {{-- @error('bpm') --}}
-                        <span class="input-error-message" role="alert">
-                            {{-- <strong>{{ $message }}</strong> --}}
-                            240以下の数字で入力してください。
-                        </span>
-                    {{-- @enderror --}}
+                    <div class="input-radio-holder">
+                        <label for="custom" class="input-label input-radio-label">
+                            <input type="radio" class="input-radio" checked name="custom" value="0" autocomplete="custom" autofocus>
+                            無
+                        </label>
+                        <label for="custom" class="input-label input-radio-label">
+                            <input type="radio" class="input-radio" name="custom" value="1" autocomplete="custom" autofocus>
+                            有
+                        </label>
+                        
+                        {{-- @error('bpm')
+                            <span class="input-error-message" role="alert">
+                                <strong>{{ $message }}</strong>
+                                メールアドレス形式で入力してください。
+                            </span>
+                        @enderror --}}
+                    </div>
                 </div>
-            </div>
-
-            <div class="input-holder">
-                <label for="custom" class="input-label text-primary">カスタムビート</label>
-
-                <div>
-                    <label for="custom" class="input-label text-primary">
-                        <input type="radio" class="input-radio" name="custom" value="0" autocomplete="custom" autofocus>
-                        無
-                    </label>
-                    <label for="custom" class="input-label text-primary">
-                        <input type="radio" class="input-radio" name="custom" value="1" autocomplete="custom" autofocus>
-                        有
-                    </label>
-                    
-                    {{-- @error('bpm')
-                        <span class="input-error-message" role="alert">
-                            <strong>{{ $message }}</strong>
-                            メールアドレス形式で入力してください。
-                        </span>
-                    @enderror --}}
-                </div>
-            </div>
+        </div>
 
             <div class="input-holder">
                 <label for="title" class="input-label text-primary">サウンド</label>

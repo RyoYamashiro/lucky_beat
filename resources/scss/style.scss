@@ -37,6 +37,7 @@ $space_size_xl: 20px;
 $space_size_l: 13px;
 $space_size_m: 7px;
 $space_size_s: 3px;
+$persent_half: 50%;
 $persent_full: 100%;
 $smartphone_width: 390px;
 
@@ -51,7 +52,7 @@ html, body {
     min-height: 100vh;
 
     @media screen and (min-width: 768px) {
-        width: 50%;
+        width: $persent_half;
         margin: 0 auto;
     }
 }
@@ -103,6 +104,10 @@ a {
     font-weight: bold;
     background: $white_color;
     letter-spacing: -1.2px;
+}
+.justify-space-between {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header {
@@ -413,29 +418,27 @@ a {
     box-sizing: border-box;
     padding: $space_size_xl;
     margin-bottom: $space_size_l;
-    &.justify-space-between {
-        display: flex;
-        justify-content: space-between;
-        .user-icon-holder {
-            width: $size_3l;
-            height: $size_3l;
-            border-radius: $size_3l;
-            background: $opacity_color;
-            box-shadow: 0px 0px 2px 0px $opacity_color inset;
+    
+    .user-icon-holder {
+        width: $size_3l;
+        height: $size_3l;
+        border-radius: $size_3l;
+        background: $opacity_color;
+        box-shadow: 0px 0px 2px 0px $opacity_color inset;
+    }
+    .user-info {
+        width: $size_5l;
+        flex-flow: column;
+        .user-name {
+            font-size: $font_size_xxl;
+            font-weight: bold;
+            margin-bottom: $space_size_s;
         }
-        .user-info {
-            width: $size_5l;
-            flex-flow: column;
-            .user-name {
-                font-size: $font_size_xxl;
-                font-weight: bold;
-                margin-bottom: $space_size_s;
-            }
-            .user-bio {
-                font-size: $font_size_l;
-            }
+        .user-bio {
+            font-size: $font_size_l;
         }
     }
+
     .form-header {
         margin-top: $space_size_l;
         text-align: right;
@@ -459,6 +462,12 @@ a {
         }
     }
     .input{
+        &-half {
+            width: $persent_half;
+            .input-form {
+                width: 90%;
+            }
+        }
         &-holder {
             display: flex;
             flex-direction: column;
@@ -538,28 +547,37 @@ a {
 
             }
         }
+        &-radio-holder {
+            display: flex;
+        }
+        &-radio-label {
+            margin-right: $space_size_l;
+            display: flex;
+        }
         &-radio {
             -webkit-appearance: none;
             -moz-appearance: none;
                 appearance: none;
             position: relative;
+            margin-right: $space_size_s;
             width: $font_size_3l;
             height: $font_size_3l;
             border: 2px solid $sub_color;
-            border-radius: 50%;
+            border-radius: $persent_half;
             vertical-align: -2px;
             &:checked:before {
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                top: $persent_half;
+                left: $persent_half;
+                transform: translate(-$persent_half, -$persent_half);
                 width: $font_size_xxl;
                 height: $font_size_xxl;
-                border-radius: 50%;
+                border-radius: $persent_half;
                 background: $sub_color;
                 content: '';
               }
         }
+    
         &-icon-form {
             width: $size_3l;
             height: $size_3l;
