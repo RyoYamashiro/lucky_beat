@@ -1,4 +1,4 @@
-<div class="input-holder">
+<div class="input-holder @if($required) input-required @endif">
     <label for="{{ $name }}" class="input-label text-primary">{{ $label }}</label>
 
     <input id="{{ $name }}" type="password" class="input-form input-form-error {{--@error($password) is-invalid @enderror --}}" name="{{ $name }}" required autocomplete="current-password">

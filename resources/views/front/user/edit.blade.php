@@ -20,19 +20,22 @@
             @include('front.components.form.text', [
                 'name' => 'name',
                 'label' => 'ユーザーID',
-                'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。'
+                'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                'required' => true
             ])
 
             @include('front.components.form.email', [
                 'name' => 'email',
                 'label' => 'メールアドレス',
-                'context' => ''
+                'context' => '',
+                'required' => true
             ])
 
             @include('front.components.form.textarea', [
                 'name' => 'bio',
                 'label' => '自己紹介文',
-                'context' => ''
+                'context' => '',
+                'required' => false
             ])
 
 

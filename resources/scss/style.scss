@@ -486,6 +486,14 @@ a {
                 background: $opacity_color;
             }
         }
+        &-required {
+            .input-label {
+                color: $sub_color;
+            }
+            .input-form {
+                border: 2px solid $sub_color;
+            }
+        }
         // 下記サイトをベタガキ
         // https://qiita.com/pe-ta/items/74822fd9fce24848d97e
         // TODO::チェックしたらペケマークを入れたい。

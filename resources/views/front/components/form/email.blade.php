@@ -1,4 +1,4 @@
-<div class="input-holder">
+<div class="input-holder @if($required) input-required @endif">
     <label for="{{ $name }}" class="input-label text-primary">{{ $label }}</label>
 
     <div>

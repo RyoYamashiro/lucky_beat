@@ -17,13 +17,15 @@
                 @include('front.components.form.email', [
                     'name' => 'email',
                     'label' => 'メールアドレス',
-                    'context' => ''
+                    'context' => '',
+                    'required' => true
                 ])
 
                 @include('front.components.form.password', [
                     'name' => 'password',
                     'label' => 'パスワード',
-                    'context' => ''
+                    'context' => '',
+                    'required' => true
                 ])
 
                 <input class="form-check-input" type="hidden" name="remember" id="remember" value="true">
