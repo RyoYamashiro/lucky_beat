@@ -17,16 +17,18 @@
                 <span class="annotation-text text-center">↑の丸をタップすると画像選択できます。</span>
             </div>
 
-            @include('front.components.form.text', [
+            @include('front.components.form.input', [
                 'name' => 'name',
                 'label' => 'ユーザーID',
+                'type' => 'text',
                 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
                 'required' => true
             ])
 
-            @include('front.components.form.email', [
+            @include('front.components.form.input', [
                 'name' => 'email',
                 'label' => 'メールアドレス',
+                'type' => 'email',
                 'context' => '',
                 'required' => true
             ])

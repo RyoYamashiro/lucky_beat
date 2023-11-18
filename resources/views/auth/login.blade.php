@@ -14,16 +14,18 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
-                @include('front.components.form.email', [
+                @include('front.components.form.input', [
                     'name' => 'email',
                     'label' => 'メールアドレス',
+                    'type' => 'email',
                     'context' => '',
                     'required' => true
                 ])
 
-                @include('front.components.form.password', [
+                @include('front.components.form.input', [
                     'name' => 'password',
                     'label' => 'パスワード',
+                    'type' => 'password',
                     'context' => '',
                     'required' => true
                 ])

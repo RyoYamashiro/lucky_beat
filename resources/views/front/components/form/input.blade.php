@@ -1,7 +1,7 @@
 <div class="input-holder @if($required) input-required @endif">
-    <label for="name" class="input-label text-primary">{{ $label }}</label>
+    <label for="{{ $name }}" class="input-label text-primary">{{ $label }}</label>
 
-    <input id="{{ $name }}" type="text" class="input-form @error($name) is-invalid @enderror" name="{{ $name }}" value="{{ old( $name ) }}" required autocomplete="{{ $name }}" autofocus>
+    <input id="{{ $name }}" type="{{ $type }}" class="input-form @error($name) is-invalid @enderror" name="{{ $name }}" value="{{ old( $name ) }}" required autocomplete="{{ $name }}" autofocus>
     @if($context)
     <span class="annotation-text">{{ $context }}</span>
     @endif
