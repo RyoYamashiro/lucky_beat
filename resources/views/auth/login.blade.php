@@ -14,31 +14,17 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
-                <div class="input-holder">
-                    <label for="email" class="input-label text-primary">メールアドレス</label>
+                @include('front.components.form.email', [
+                    'name' => 'email',
+                    'label' => 'メールアドレス',
+                    'context' => ''
+                ])
 
-                    <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                    {{-- @error('email') --}}
-                        <span class="input-error-message" role="alert">
-                            {{-- <strong>{{ $message }}</strong> --}}
-                            メールアドレス形式で入力してください
-                        </span>
-                    {{-- @enderror --}}
-                </div>
-
-                <div class="input-holder">
-                    <label for="password" class="input-label text-primary">パスワード</label>
-
-                    <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="current-password">
-
-                    {{-- @error('email') --}}
-                        <span class="input-error-message" role="alert">
-                            {{-- <strong>{{ $message }}</strong> --}}
-                            パスワードかメールアドレスが誤っております。
-                        </span>
-                    {{-- @enderror --}}
-                </div>
+                @include('front.components.form.password', [
+                    'name' => 'password',
+                    'label' => 'パスワード',
+                    'context' => ''
+                ])
 
                 <input class="form-check-input" type="hidden" name="remember" id="remember" value="true">
 
