@@ -9,23 +9,19 @@
     <div>
         <form method="POST" action="{{ route('register') }}">
             @csrf
-            <div class="input-holder">
-                <label for="title" class="input-label text-primary">ビートのタイトル</label>
 
-                <input id="name" type="text" class="input-form @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
-                {{-- @error('title') --}}
-                    <span class="input-error-message" role="alert">
-                        {{-- <strong>{{ $message }}</strong> --}}
-                        文字列で入力してください。
-                    </span>
-                {{-- @enderror --}}
-            </div>
+            @include('front.components.form.text', [
+                'name' => 'title',
+                'label' => 'ビートのタイトル',
+                'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                'required' => true
+            ])
             
             <div class="input-holder">
                 <label for="bpm" class="input-label text-primary">BPM</label>
 
                 <div>
-                    <input id="bpm" type="number" class="input-form" disabled name="bpm" value="{{ old('email') }}" required autocomplete="bpm" autofocus>
+                    <input id="bpm" type="number" class="input-form" name="bpm" value="{{ old('email') }}" required autocomplete="bpm" autofocus>
 
                     {{-- @error('bpm') --}}
                         <span class="input-error-message" role="alert">
@@ -41,11 +37,11 @@
 
                 <div>
                     <label for="custom" class="input-label text-primary">
-                        <input type="radio" class="input-form" disabled name="custom" value="0" autocomplete="custom" autofocus>
+                        <input type="radio" class="input-radio" name="custom" value="0" autocomplete="custom" autofocus>
                         無
                     </label>
                     <label for="custom" class="input-label text-primary">
-                        <input type="radio" class="input-form" disabled name="custom" value="1" autocomplete="custom" autofocus>
+                        <input type="radio" class="input-radio" name="custom" value="1" autocomplete="custom" autofocus>
                         有
                     </label>
                     

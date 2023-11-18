@@ -538,6 +538,28 @@ a {
 
             }
         }
+        &-radio {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+                appearance: none;
+            position: relative;
+            width: $font_size_3l;
+            height: $font_size_3l;
+            border: 2px solid $sub_color;
+            border-radius: 50%;
+            vertical-align: -2px;
+            &:checked:before {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: $font_size_xxl;
+                height: $font_size_xxl;
+                border-radius: 50%;
+                background: $sub_color;
+                content: '';
+              }
+        }
         &-icon-form {
             width: $size_3l;
             height: $size_3l;
