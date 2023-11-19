@@ -72,11 +72,14 @@
             </div>
 
             <div class="input-holder">
-                <label for="name" class="input-label text-primary">画像</label>
-                <span class="annotation-text text-center">※一覧でのサムネイルとプレイヤーでのジャケット画像として表示</span>
-                <div class="input-icon-form">
-                    <img />
+                <div class="display-flex">
+                    <label for="image" class="input-label text-primary">画像</label>
+                    <span class="annotation-text">※一覧でのサムネイルとプレイヤーでのジャケット画像として表示</span>
                 </div>
+                <label class="input-image-form">
+                    <img />画像ファイルを<br>選択してください
+                <input type="file" name="image">
+            </label>
             </div>
 
             <div class="input-holder">
