@@ -85,13 +85,28 @@
             <div class="input-holder">
                 <label for="title" class="input-label text-primary">ハッシュタグ</label>
 
-                <div class="hash-tag-holder">
-                    <span class="hash-tag-badge">#hash_tag</span>
-                    <span class="hash-tag-badge">#hash_tag</span>
-                    <span class="hash-tag-badge">#hash_tag</span>
+                <div class="justify-space-between">
+                    @include('front.components.form.input_hash_tag', [
+                        'name' => 'hash_tag_1',
+                        'type' => 'text',
+                        'context' => '',
+                        'required' => false
+                    ])
+                    @include('front.components.form.input_hash_tag', [
+                        'name' => 'hash_tag_2',
+                        'type' => 'text',
+                        'context' => '',
+                        'required' => false
+                    ])
+                    @include('front.components.form.input_hash_tag', [
+                        'name' => 'hash_tag_3',
+                        'type' => 'text',
+                        'context' => '',
+                        'required' => false
+                    ])
                 </div>
 
-                {{-- @error('title') --}}
+                {{-- @error('hash_tag') --}}
                     <span class="input-error-message" role="alert">
                         {{-- <strong>{{ $message }}</strong> --}}
                         文字列で入力してください。

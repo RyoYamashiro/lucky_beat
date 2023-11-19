@@ -605,9 +605,6 @@ video {
 .max-w-6xl {
   max-width: 72rem;
 }
-.max-w-xl {
-  max-width: 36rem;
-}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -623,19 +620,12 @@ video {
 .rounded-lg {
   border-radius: 0.5rem;
 }
-.border-r {
-  border-right-width: 1px;
-}
 .border-t {
   border-top-width: 1px;
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
@@ -650,10 +640,6 @@ video {
 }
 .p-6 {
   padding: 1.5rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -683,14 +669,8 @@ video {
 .font-semibold {
   font-weight: 600;
 }
-.uppercase {
-  text-transform: uppercase;
-}
 .leading-7 {
   line-height: 1.75rem;
-}
-.tracking-wider {
-  letter-spacing: 0.05em;
 }
 .text-gray-200 {
   --tw-text-opacity: 1;
@@ -1138,7 +1118,7 @@ input[type=file] {
 }
 .white-holder .form-title {
   text-align: center;
-  margin-top: 13px;
+  margin: 13px;
 }
 .white-holder .form-title-text {
   display: inline-block;
@@ -1156,10 +1136,29 @@ input[type=file] {
 .white-holder .input-half .input-form {
   width: 90%;
 }
+.white-holder .input-hash-tag {
+  width: 33.3%;
+}
+.white-holder .input-hash-tag-label {
+  width: 90%;
+  padding: 3px;
+  border-radius: 7px;
+  border: 2px solid #FFB76F;
+  font-size: 1rem;
+  color: #23DFDF;
+}
+.white-holder .input-hash-tag .input-form {
+  width: 80%;
+  border: none;
+  color: #000000;
+}
+.white-holder .input-hash-tag .input-form:focus {
+  outline: none;
+}
 .white-holder .input-holder {
   display: flex;
   flex-direction: column;
-  margin-top: 13px;
+  margin-bottom: 13px;
 }
 .white-holder .input-label {
   display: inline-block;
@@ -1183,6 +1182,12 @@ input[type=file] {
 }
 .white-holder .input-form-disabled {
   background: rgba(200, 200, 200, 0.5);
+}
+.white-holder .input-form-one-third {
+  width: 33.3%;
+}
+.white-holder .input-form-one-third .input-form {
+  width: 90%;
 }
 .white-holder .input-required .input-label {
   color: #23DFDF;

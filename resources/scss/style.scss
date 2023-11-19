@@ -37,6 +37,7 @@ $space_size_xl: 20px;
 $space_size_l: 13px;
 $space_size_m: 7px;
 $space_size_s: 3px;
+$persent_one_third: 33.3%;
 $persent_half: 50%;
 $persent_full: 100%;
 $smartphone_width: 390px;
@@ -455,7 +456,7 @@ input[type="file"] {
     }
     .form-title { 
         text-align: center;
-        margin-top: $space_size_l;
+        margin: $space_size_l;
         &-text {
             display: inline-block;
             margin: $space_size_s auto;
@@ -474,10 +475,29 @@ input[type="file"] {
                 width: 90%;
             }
         }
+        &-hash-tag {
+            width: $persent_one_third;
+            &-label {
+                width: 90%;
+                padding: $space_size_s;
+                border-radius: $space_size_m;
+                border: 2px solid $theme_color;
+                font-size: $font_size_xxl;
+                color: $sub_color;
+            }
+            .input-form {
+                width: 80%;
+                border: none;
+                color: $black_color;
+                 &:focus { 
+                    outline: none;
+                 }
+            }
+        }
         &-holder {
             display: flex;
             flex-direction: column;
-            margin-top: $space_size_l;
+            margin-bottom: $space_size_l;
         }
         &-label {
             display: inline-block;
@@ -501,6 +521,13 @@ input[type="file"] {
             &-disabled {
                 background: $opacity_color;
             }
+
+            &-one-third {
+            width: $persent_one_third;
+            .input-form {
+                width: 90%;
+            }
+        }
         }
         &-required {
             .input-label {
@@ -622,7 +649,6 @@ input[type="file"] {
             background: $opacity_color;
             box-shadow: 0px 0px 2px 0px $opacity_color inset;
             margin-top: $space_size_m;
-
             display: flex;
             justify-content: center;
             align-items: center;
