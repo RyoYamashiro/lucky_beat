@@ -627,8 +627,8 @@ input[type="file"] {
             justify-content: center;
             align-items: center;
             border-radius: $space_size_l;
-            color: $sub_color;
-            border: $sub_color 3px solid;
+            color: $theme_color;
+            border: $theme_color 3px solid;
             background-color: $white_color;
             cursor: pointer;
         }
