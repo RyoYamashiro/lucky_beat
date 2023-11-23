@@ -12,8 +12,16 @@ $opacity_color: rgba(200, 200, 200, .5);
 
 $theme_font_family: 'JetBrains Mono';
 
+$size_xl: 50px;
+$size_xxl: 70px;
 $size_3l: 100px;
+$size_4l: 160px;
+$size_5l: 210px;
+$size_6l: 260px;
 
+$font_size_6l: 3.4rem;
+$font_size_5l: 2.4rem;
+$font_size_4l: 2rem;
 $font_size_3l: 1.6rem;
 $font_size_xxl: 1rem;
 $font_size_xl: 0.8rem;
@@ -21,6 +29,7 @@ $font_size_l: 0.5rem;
 $font_size_m: 0.2rem;
 $font_size_s: 0.05rem;
 
+$space_size_5l: 60px;
 $space_size_4l: 40px;
 $space_size_3l: 33px;
 $space_size_xxl: 27px;
@@ -28,10 +37,14 @@ $space_size_xl: 20px;
 $space_size_l: 13px;
 $space_size_m: 7px;
 $space_size_s: 3px;
+$persent_one_third: 33.3%;
+$persent_half: 50%;
 $persent_full: 100%;
 $smartphone_width: 390px;
 
-
+html, body {
+    width: 100%;
+}
 
 .wrapper {
     background: $base_color;
@@ -40,12 +53,15 @@ $smartphone_width: 390px;
     min-height: 100vh;
 
     @media screen and (min-width: 768px) {
-        width: 50%;
+        width: $persent_half;
         margin: 0 auto;
     }
 }
 a {
     color: $sub_color;
+}
+input[type="file"] {
+    display: none;
 }
 
 .button {
@@ -93,13 +109,24 @@ a {
     background: $white_color;
     letter-spacing: -1.2px;
 }
+.justify-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+.display-flex {
+    display: flex;
+}
 
 .header {
+    width: 100%;
+    position: fixed;
     background: $white_color;
     padding: $space_size_3l $space_size_l $space_size_l;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // TODO::すごい無根拠な数字だから直そう。
+    z-index: 30;
     .logo{
         font-weight: bold;
         font-size: $font_size_3l;
@@ -183,11 +210,10 @@ a {
           transform: translateX(-100%);
           z-index: 2;
         }
-
         .menu {
             display: block;
-            align-items: center;
             font-size: $font_size_3l;
+            width: 100%;
             &-link {
                 -webkit-font-smoothing: initial;
                 display: block;
@@ -205,8 +231,11 @@ a {
 }
 
 .main-container {
-    padding: $space_size_l;
-    position: relative;
+    margin-top: $size_3l;
+    padding: 0 $space_size_l;
+}
+.user-beat-list-holder {
+    margin-top: $space_size_l;
 }
 
 .beat-list-item{
@@ -300,6 +329,14 @@ a {
                 margin-bottom: $space_size_s;
             }
         }
+        .hash-tag-badge {
+            padding: $space_size_s;
+            border-radius: $space_size_s;
+            font-size: $font_size_m;
+            font-weight: bold;
+            background: $theme_color;
+            color: $sub_color;
+        }
         .user-icon-frame {
             position: absolute;
             right: 0;
@@ -310,14 +347,6 @@ a {
             background: $inactive_color;
             margin: $space_size_s;
             box-shadow: 0px 0px 2px 0px $opacity_color inset;
-        }
-        .hash-tag-badge {
-            padding: $space_size_s;
-            border-radius: $space_size_s;
-            font-size: $font_size_m;
-            font-weight: bold;
-            background: $theme_color;
-            color: $sub_color;
         }
         .beat-context {
             margin: $space_size_s $space_size_s 0 0;
@@ -390,12 +419,33 @@ a {
 }
 
 
-.white-form-holder{
+.white-holder{
     background: $white_color;
     border-radius: $space_size_m;
-    margin-top: $space_size_m;
     box-sizing: border-box;
     padding: $space_size_xl;
+    margin-bottom: $space_size_l;
+    
+    .user-icon-holder {
+        width: $size_3l;
+        height: $size_3l;
+        border-radius: $size_3l;
+        background: $opacity_color;
+        box-shadow: 0px 0px 2px 0px $opacity_color inset;
+    }
+    .user-info {
+        width: $size_5l;
+        flex-flow: column;
+        .user-name {
+            font-size: $font_size_xxl;
+            font-weight: bold;
+            margin-bottom: $space_size_s;
+        }
+        .user-bio {
+            font-size: $font_size_l;
+        }
+    }
+
     .form-header {
         margin-top: $space_size_l;
         text-align: right;
@@ -406,7 +456,7 @@ a {
     }
     .form-title { 
         text-align: center;
-        margin-top: $space_size_l;
+        margin: $space_size_l;
         &-text {
             display: inline-block;
             margin: $space_size_s auto;
@@ -419,16 +469,42 @@ a {
         }
     }
     .input{
+        &-half {
+            width: $persent_half;
+            .input-form {
+                width: 90%;
+            }
+        }
+        &-hash-tag {
+            width: $persent_one_third;
+            &-label {
+                width: 90%;
+                padding: $space_size_s;
+                border-radius: $space_size_m;
+                border: 2px solid $theme_color;
+                font-size: $font_size_xxl;
+                color: $sub_color;
+            }
+            .input-form {
+                width: 80%;
+                border: none;
+                color: $black_color;
+                 &:focus { 
+                    outline: none;
+                 }
+            }
+        }
         &-holder {
             display: flex;
             flex-direction: column;
-            margin-top: $space_size_l;
+            margin-bottom: $space_size_l;
         }
         &-label {
             display: inline-block;
             font-size: $font_size_xxl;
             font-weight: bold;
             margin-bottom: $space_size_s;
+            min-width: $size_xxl;
         }
         &-label-holder {
             text-align: center;
@@ -444,6 +520,21 @@ a {
             }
             &-disabled {
                 background: $opacity_color;
+            }
+
+            &-one-third {
+            width: $persent_one_third;
+            .input-form {
+                width: 90%;
+            }
+        }
+        }
+        &-required {
+            .input-label {
+                color: $sub_color;
+            }
+            .input-form {
+                border: 2px solid $sub_color;
             }
         }
         // 下記サイトをベタガキ
@@ -490,6 +581,57 @@ a {
 
             }
         }
+        &-radio-holder {
+            display: flex;
+        }
+        &-radio-label {
+            margin-right: $space_size_l;
+            display: flex;
+        }
+        &-radio {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+                appearance: none;
+            position: relative;
+            margin-right: $space_size_s;
+            width: $font_size_3l;
+            height: $font_size_3l;
+            border: 2px solid $sub_color;
+            border-radius: $persent_half;
+            vertical-align: -2px;
+            &:checked:before {
+                position: absolute;
+                top: $persent_half;
+                left: $persent_half;
+                transform: translate(-$persent_half, -$persent_half);
+                width: $font_size_xxl;
+                height: $font_size_xxl;
+                border-radius: $persent_half;
+                background: $sub_color;
+                content: '';
+              }
+        }
+
+        &-file-holder {
+            width: $persent_half;
+            height: $size_xxl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $space_size_l;
+            color: $sub_color;
+            border: $sub_color 3px solid;
+            background-color: $white_color;
+            cursor: pointer;
+            margin-right: $space_size_l;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        &-file {
+            display: none;
+        }
+    
         &-icon-form {
             width: $size_3l;
             height: $size_3l;
@@ -497,6 +639,24 @@ a {
             margin: 0 auto;
             background: $opacity_color;
             box-shadow: 0px 0px 2px 0px $opacity_color inset;
+        }
+
+        &-image-form {
+            width: $size_4l;
+            height: $size_4l;
+            border-radius: $space_size_xl;
+            margin: 0 auto;
+            background: $opacity_color;
+            box-shadow: 0px 0px 2px 0px $opacity_color inset;
+            margin-top: $space_size_m;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: $space_size_l;
+            color: $theme_color;
+            border: $theme_color 3px solid;
+            background-color: $white_color;
+            cursor: pointer;
         }
         &-error-message {
             display: inline-block;
@@ -528,3 +688,182 @@ a {
 }
 
 
+.switch-holder {
+    display: flex;
+    position: relative;
+    .toggle-switch {
+        display: flex;
+        background: $theme_color;
+        padding: $space_size_s;
+        border-radius: $space_size_xl;
+        text-align: center;
+        color: $white_color;
+        font-size: $font_size_xxl;
+        margin: 0 auto;
+        &-item {
+            display: block;
+            padding: $space_size_s;
+            box-sizing: border-box;
+            border-radius: $space_size_xl;
+            width: $size_3l;
+            font-weight: bold;
+            box-sizing: border-box;
+            &.active {
+                background: $sub_color;
+            }
+        }
+    }
+    .back-link {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.beat-detail{
+    .beat-main-image {
+        margin-top: $space_size_l;
+        width: $size_6l;
+        height: $size_6l;
+        border-radius: $space_size_m;
+        background: $opacity_color;
+        margin: $space_size_xl auto $space_size_m;
+    }
+    .beat-title {
+        text-align: center;
+        color: $theme_color;
+        font-size: $font_size_3l;
+        font-weight: bold;
+    }
+    .beat-length {
+        height: $space_size_xl;
+        background: $theme_color;
+        display: flex;
+        position: relative;
+        width: $size_6l;
+        margin: $space_size_m auto;
+        .play-done {
+            height: 100%;
+            width: $size_3l;
+            background: $sub_color;
+        }
+        .play-now {
+            position: absolute;
+            top: -$space_size_m;
+            border: 2px solid $sub_color;
+            border-radius: $space_size_s;
+            height: $space_size_3l;
+            box-sizing: border-box;
+            background: $accent_color;
+            width: $space_size_m;
+            margin-left: $size_3l;
+        }
+    }
+    .beat-operation-button-holder {
+        width: $size_6l;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        position: relative;
+        .operation-button {
+            position: relative;
+            background: $theme_color;
+            border-radius: $size_xxl;
+            width: $size_xxl;
+            height: $size_xxl;
+            &-big {
+                width: $size_3l;
+                height: $size_3l;
+            }
+            &-middle {
+                top: $space_size_l;
+            }
+            &-icon {
+                font-size: $font_size_5l;
+                font-weight: bold;
+                color: $sub_color;
+                position: absolute;
+                &.big-icon {
+                    font-size: $font_size_6l;
+                }
+            }
+            .backward-step-icon {
+                left: 30%;
+                top: 24%;
+            }
+            .play-icon {
+                left: 33%;
+                top: 24%;
+            }
+            .repeat-icon {
+                left: 24%;
+                top: 24%;
+            }
+            .drum-icon {
+                left: 19%;
+                top: 19%;
+            }
+            .music-icon {
+                left: 20%;
+                top: 20%;
+            }
+            .guitar-icon {
+                left: 20%;
+                top: 20%;
+            }
+            .clapping-icon {
+                left: 18%;
+                top: 18%;
+            }
+            .mute-icon {
+                left: 18%;
+                top: 23%;
+            }
+        }
+    }
+    .hash-tag-holder {
+        width: $size_6l;
+        margin: $space_size_l auto $space_size_m;
+        display: flex;
+        justify-content: space-between;
+        .hash-tag-badge {
+            padding: $space_size_s;
+            border-radius: $space_size_s;
+            font-size: $font_size_xl;
+            font-weight: bold;
+            background: $theme_color;
+            color: $sub_color;
+        }
+    }
+    .beat-context {
+        color: $black_color;
+        font-size: $font_size_xxl;
+        width: $size_6l;
+        margin: 0 auto;
+    }
+    .bottom-button-holder {
+        width: $size_6l;
+        margin: $space_size_m auto;
+        .download-button {
+            width: $persent_full;
+            padding: $space_size_m;
+            border-radius: $space_size_m;
+            color: $white_color;
+            font-size: $font_size_xxl;
+            font-weight: bold;
+            background: $sub_color;
+            box-shadow: 1px 1px 2px 1px $opacity_color;    
+        }
+    }
+    .custom-track-holder {
+        width: $size_6l;
+        margin: $space_size_xl auto 0;
+        position: relative;
+        &-culomn {
+            display: flex;
+        }
+        &:last-child{
+            justify-content: center;
+        }
+    }
+}

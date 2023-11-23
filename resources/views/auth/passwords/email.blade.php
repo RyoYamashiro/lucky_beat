@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="white-form-holder">
+<div class="white-holder">
     <div class="form-header">
         <a class="form-header-link" href="#">ログインページへ</a>
     </div>

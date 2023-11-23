@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="white-form-holder">
+<div class="white-holder">
     <div class="form-header">
         <a class="form-header-link" href="#">ログインページへ</a>
     </div>
@@ -12,51 +12,38 @@
         <div>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
+                {{-- TODO::requiredを任意入力にしたい。 --}}
+                @include('front.components.form.input', [
+                    'name' => 'name',
+                    'label' => 'ユーザーID',
+                    'type' => 'text',
+                    'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                    'required' => true
+                ])
+                
+                @include('front.components.form.input', [
+                    'name' => 'email',
+                    'label' => 'メールアドレス',
+                    'type' => 'email',
+                    'context' => '',
+                    'required' => true
+                ])
 
-                <div class="input-holder">
-                    <label for="name" class="input-label text-primary">ユーザーID</label>
+                @include('front.components.form.input', [
+                    'name' => 'password',
+                    'label' => 'パスワード',
+                    'type' => 'password',
+                    'context' => '',
+                    'required' => true
+                ])
 
-                    <input id="name" type="text" class="input-form @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                    <span class="annotation-text">※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。</span>
-                    {{-- @error('name') --}}
-                        <span class="input-error-message" role="alert">
-                            {{-- <strong>{{ $message }}</strong> --}}
-                            文字列で入力してください。
-                        </span>
-                    {{-- @enderror --}}
-                </div>
-                <div class="input-holder">
-                    <label for="email" class="input-label text-primary">メールアドレス</label>
-
-                    <input id="email" type="email" class="input-form @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                    {{-- @error('email') --}}
-                        <span class="input-error-message" role="alert">
-                            {{-- <strong>{{ $message }}</strong> --}}
-                            メールアドレス形式で入力してください。
-                        </span>
-                    {{-- @enderror --}}
-                </div>
-
-                <div class="input-holder">
-                    <label for="password" class="input-label text-primary">パスワード</label>
-
-                    <input id="password" type="password" class="input-form input-form-error {{--@error('password') is-invalid @enderror --}}" name="password" required autocomplete="new-password">
-
-                    {{-- @error('email') --}}
-                        <span class="input-error-message" role="alert">
-                            {{-- <strong>{{ $message }}</strong> --}}
-                            パスワードかメールアドレスが誤っております。
-                        </span>
-                    {{-- @enderror --}}
-                </div>
-
-                <div class="input-holder">
-                    <label for="password-confirm" class="input-label text-primary">確認用パスワード</label>
-
-                    <input id="password-confirm" type="password" class="input-form" name="password_confirmation" required autocomplete="new-password">
-                </div>
-
+                @include('front.components.form.input', [
+                    'name' => 'password_confirmation',
+                    'label' => '確認用パスワード',
+                    'type' => 'password',
+                    'context' => '',
+                    'required' => true
+                ])
                 <div class="input-holder">
                     <div class="input-label-holder">
                         <label for="password-confirm" class="input-label text-success">利用規約</label>
