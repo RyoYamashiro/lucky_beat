@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\front\Beat\DetailAction;
 use App\Http\Controllers\front\Beat\CustomAction;
+use App\Http\Controllers\front\Beat\CustomEditAction;
 use App\Http\Controllers\front\Beat\EditAction as BeatEditAction;
 use App\Http\Controllers\front\contact\ShowContactFormAction;
 use App\Http\Controllers\front\Index\IndexAction;
@@ -30,4 +31,5 @@ Route::get('/user/ryoyama/', UserDetailAction::class)->name('user.detail');
 Route::get('/beat/noon/detail', DetailAction::class)->name('beat.detail');
 Route::get('/beat/noon/custom', CustomAction::class)->name('beat.custom');
 Route::get('/beat/noon/edit', BeatEditAction::class)->name('beat.custom');
+Route::get('/beat/noon/edit/custom', CustomEditAction::class)->name('beat.custom');
 Route::get('/contact', ShowContactFormAction::class)->name('contact');
