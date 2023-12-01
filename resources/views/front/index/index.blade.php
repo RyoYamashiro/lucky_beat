@@ -32,9 +32,10 @@
             <div class="beat-context">
                 ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
-            <div class="baet-right-lower">
+            {{-- TODO::値段のバッジが下はみ出す。最悪有料は第2フェーズだから無視する。 --}}
+            {{-- <div class="baet-right-lower">
                 <p class="badge price-badge">¥5000</p>
-            </div>
+            </div> --}}
         <div>
     </article>
 
@@ -69,9 +70,6 @@
             <div class="beat-context">
                 ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
-            <div class="baet-right-lower">
-                <p class="badge price-badge">¥5000</p>
-            </div>
         <div>
     </article><article class="beat-list-item">
         <div class="beat-left-side">
@@ -103,9 +101,6 @@
             </div>
             <div class="beat-context">
                 ビートの説明文です。ビートの説明文です。ビートの説明文です。
-            </div>
-            <div class="baet-right-lower">
-                <p class="badge price-badge">¥5000</p>
             </div>
         <div>
     </article>
@@ -141,9 +136,6 @@
             <div class="beat-context">
                 ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
-            <div class="baet-right-lower">
-                <p class="badge price-badge">¥5000</p>
-            </div>
         <div>
     </article>
 
@@ -178,9 +170,6 @@
             <div class="beat-context">
                 ビートの説明文です。ビートの説明文です。ビートの説明文です。
             </div>
-            <div class="baet-right-lower">
-                <p class="badge price-badge">¥5000</p>
-            </div>
         <div>
     </article>
 
@@ -214,9 +203,6 @@
             </div>
             <div class="beat-context">
                 ビートの説明文です。ビートの説明文です。ビートの説明文です。
-            </div>
-            <div class="baet-right-lower">
-                <p class="badge price-badge">¥5000</p>
             </div>
         <div>
     </article>
@@ -246,8 +232,8 @@
         </p>
     </section>
 
-    {{-- TODO::第2フェーズで使う。 --}}
-    <div class="search-button-holder">
+    {{-- TODO::下にはみ出す。第2フェーズで使う。 --}}
+    {{-- <div class="search-button-holder">
         <i class="fa fa-search search-icon" aria-hidden="true"></i>
-    </div>
+    </div> --}}
 @endsection
