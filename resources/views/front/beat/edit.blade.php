@@ -129,16 +129,12 @@
 
 
             <div class="button-holder">
-                <div>
-                    <a class="button button-cancel" href="">{{-- TODO::遷移先はブラウザバックにする。 --}}
-                        キャンセル
-                    </a>
-                </div>
-                <div>
-                    <button type="submit" class="button button-success button-large">
-                        登録
-                    </button>
-                </div>
+                <a class="button button-cancel" href="">{{-- TODO::遷移先はブラウザバックにする。 --}}
+                    キャンセル
+                </a>
+                <button type="submit" class="button button-success button-large">
+                    登録
+                </button>
             </div>
         </form>
     </div>
