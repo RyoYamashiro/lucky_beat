@@ -15,9 +15,10 @@
                 {{-- TODO::requiredを任意入力にしたい。 --}}
                 @include('front.components.form.input', [
                     'name' => 'name',
-                    'label' => 'ユーザーID',
+                    'label' => 'ユーザー名',
                     'type' => 'text',
-                    'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                    // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                    'context' => '',
                     'required' => true
                 ])
                 
@@ -48,11 +49,15 @@
                     <div class="input-label-holder">
                         <label for="password-confirm" class="input-label text-success">利用規約</label>
                     </div>
-                    {{-- TODO::チェックボックスと他文字のスタイル効かせよう fontawesomeで良いかも --}}
                     <div class="checkbox-holder">
-                        <input class="input-checkbox" type="checkbox" name="term" id="term">
+                        <input class="input-checkbox @error('term') is-invalid @enderror" type="checkbox" name="term" id="term">
                         <p class="annotation-text"><a class="strong-text">こちら</a>を確認し、問題なければチェックしてください。</p>
                     </div>
+                    @error('term')
+                        <span class="input-error-message" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <div class="button-holder">

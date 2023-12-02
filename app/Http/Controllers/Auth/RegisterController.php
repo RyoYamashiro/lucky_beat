@@ -49,11 +49,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $renames = [
+            'name' => 'ユーザー名',
+            'email' => 'メールアドレス',
+            'password' => 'パスワード',
+            'password_confirmation' => '確認用パスワード',
+            'term' => '利用規約',
+        ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'term' => ['required']
+        ],
+        [], // 追加エラーメッセージ
+        $renames // 各フォームの日本語名
+    );
     }
 
     /**
