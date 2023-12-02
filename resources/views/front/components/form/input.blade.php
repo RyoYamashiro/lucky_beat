@@ -5,10 +5,9 @@
     @if($context)
     <span class="annotation-text">{{ $context }}</span>
     @endif
-    {{-- @error( $name ) --}}
+    @error( $name )
         <span class="input-error-message" role="alert">
-            {{-- <strong>{{ $message }}</strong> --}}
-            文字列で入力してください。
+            <strong>{{ $message }}</strong>
         </span>
-    {{-- @enderror --}}
+    @enderror
 </div>

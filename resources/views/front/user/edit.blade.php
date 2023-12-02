@@ -7,7 +7,7 @@
         <span class="form-title-text">アカウント設定</span>
     </div>
     <div>
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('user.update', ['user' => $user]) }}">
             @csrf
             <div class="input-holder">
                 <label for="name" class="input-label text-primary">アイコン画像</label>
@@ -19,9 +19,10 @@
 
             @include('front.components.form.input', [
                 'name' => 'name',
-                'label' => 'ユーザーID',
+                'label' => 'ユーザー名',
                 'type' => 'text',
-                'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                'context' => '',
                 'required' => true
             ])
 
@@ -43,7 +44,7 @@
 
             <div class="button-holder">
                 <div>
-                    <a class="button button-cancel" href="{{ route('user.detail') }}">
+                    <a class="button button-cancel" href="{{ route('user.detail', ['user' => $user]) }}">
                         キャンセル
                     </a>
                 </div>
