@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Front\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Front\User\UpdateFormRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UpdateAction extends Controller
 {
@@ -15,7 +15,7 @@ class UpdateAction extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request, User $user)
+    public function __invoke(UpdateFormRequest $request, User $user)
     {
         dd('ここ来てる');
         // TODO::いったんテストデータを増やす
