@@ -43,7 +43,7 @@
 
             <div class="button-holder">
                 <div>
-                    <a class="button button-cancel" href="">{{-- TODO::遷移先はブラウザバックにする。 --}}
+                    <a class="button button-cancel" href="{{ route('user.detail') }}">
                         キャンセル
                     </a>
                 </div>
