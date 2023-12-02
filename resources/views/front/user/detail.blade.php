@@ -7,8 +7,10 @@
     </div>
 
     <div class="user-info">
-        <p class="user-name text-primary">ryo_lio</p>
-
+        <div class="justify-space-between">
+            <p class="user-name text-primary">ryo_lio</p>
+            <a href="{{ route('user.edit') }}">プロフィール編集</a>
+        </div>
         <span class="user-bio">
             福岡市でひっそり隠居しながら趣味でビートを作ってます。<br>
             ちょっとアシッドジャズ調なものが好みで作ってます。

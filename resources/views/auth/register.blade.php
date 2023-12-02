@@ -3,7 +3,7 @@
 @section('content')
 <div class="white-holder">
     <div class="form-header">
-        <a class="form-header-link" href="#">ログインページへ</a>
+        <a class="form-header-link" href="{{ route('login') }}">ログインページへ</a>
     </div>
 
     <div class="form-title">
