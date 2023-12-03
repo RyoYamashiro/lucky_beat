@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Front\User;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateFormRequest extends FormRequest
 {
@@ -24,9 +25,9 @@ class UpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email|max:255',
-            'bio' => 'max:10|required'
+            'name' => ['required', 'max:255'],
+            'email' => ['required', 'email', 'max:255', 'unique:users,email,'. Auth::user()->email. ',email'],
+            'bio' => ['max:255', 'required']
         ];
     }
 

@@ -17,9 +17,19 @@ class UpdateAction extends Controller
      */
     public function __invoke(UpdateFormRequest $request, User $user)
     {
-        dd('ここ来てる');
-        // TODO::いったんテストデータを増やす
-        // 各ユーザーのIDをルーティングのURLに設定してDetail,Edit,Updateで呼び出せるようにする。
+        
+        dump('UpdateAction');
+        dump($user->profile);
+        // TODO::メールアドレスがDBと違う場合は、認証メール送信する。
+        $user->update([
+            'name' => $request->name,
+            // 認証メール確認するまでは更新しない。
+            // 'email' => $request->email
+        ]);
+        $user->profile()->updateOrCreate(['user_id' => $user->id], [
+            'bio' => $request->bio
+        ]);
+        return redirect()->route('index');
         //
     }
 }
