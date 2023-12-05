@@ -3,7 +3,7 @@
     <div class="header-right-part">
         {{-- TODO::@authにする --}}
         @auth
-            <a class="user-icon-frame">
+            <a class="user-icon-frame" href="{{ route('user.detail', ['user' => Auth::user()])}}">
                 {{-- <img src=""> --}}
             </a>
         @endauth
@@ -20,6 +20,7 @@
             <li class="menu-item"><a class="menu-link">トップ</a></li>
             @auth
                 <li class="menu-item"><a href="{{ route('user.detail', ['user' => Auth::user()]) }}" class="menu-link">マイページ</a></li>
+                <li class="menu-item"><a class="menu-link">ビート登録</a></li>
                 <li class="menu-item"><a class="menu-link">退会</a></li>
             @endauth
             

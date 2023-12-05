@@ -75,6 +75,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // TODO::メール認証周りを確認しよう
+        // 既存のメール認証処理にメールアドレスの値も入れて、認証成功したらDBを更新するようにする。
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
