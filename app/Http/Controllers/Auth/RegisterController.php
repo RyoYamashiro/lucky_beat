@@ -49,11 +49,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $renames = [
+            'name' => 'ユーザー名',
+            'email' => 'メールアドレス',
+            'password' => 'パスワード',
+            'password_confirmation' => '確認用パスワード',
+            'term' => '利用規約',
+        ];
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'term' => ['required']
+        ],
+        [], // 追加エラーメッセージ
+        $renames // 各フォームの日本語名
+    );
     }
 
     /**
@@ -64,6 +75,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // TODO::メール認証周りを確認しよう
+        // 既存のメール認証処理にメールアドレスの値も入れて、認証成功したらDBを更新するようにする。
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

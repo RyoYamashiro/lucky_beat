@@ -2,14 +2,18 @@
 
 @section('content')
 <div class="white-holder justify-space-between">
-    <div class="user-icon-holder">
-        <img />
+    <div>
+        <div class="user-icon-holder">
+            <img />
+        </div>
+        <a href="{{ route('user.edit', ['user' => $user]) }}">編集</a>
     </div>
 
-    <div class="user-info">
-        <p class="user-name text-primary">ryo_lio</p>
 
+    <div class="user-info">
+            <p class="user-name text-primary">{{ $user->name }}</p>
         <span class="user-bio">
+            {{-- TODO::リレーションのプロフィールデータのbioから取得。サニタイズもする。 --}}
             福岡市でひっそり隠居しながら趣味でビートを作ってます。<br>
             ちょっとアシッドジャズ調なものが好みで作ってます。
         </span>

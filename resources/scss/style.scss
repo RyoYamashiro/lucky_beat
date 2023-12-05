@@ -228,6 +228,8 @@ height: 100%;
             }
             &-link {
                 -webkit-font-smoothing: initial;
+                width: 100%;
+                color: $sub_color;
             }   
         }
     }
@@ -518,26 +520,31 @@ height: 100%;
             border-radius: $space_size_m;
             border: 2px solid $theme_color;
             font-size: $font_size_xl;
-            &-error {
-                border-color: $accent_color;
-            }
             &-disabled {
                 background: $opacity_color;
             }
 
             &-one-third {
-            width: $persent_one_third;
-            .input-form {
-                width: 90%;
+                width: $persent_one_third;
+                .input-form {
+                    width: 90%;
+                }
+            }
+            &.is-invalid { 
+                border-color: $accent_color;
             }
         }
-        }
+
+        
         &-required {
             .input-label {
                 color: $sub_color;
             }
             .input-form {
                 border: 2px solid $sub_color;
+                &.is-invalid {
+                    border-color: $accent_color;
+                }
             }
         }
         // 下記サイトをベタガキ
@@ -581,7 +588,9 @@ height: 100%;
                 border-right: 3px solid $sub_color;
                 border-bottom: 3px solid $sub_color;
                 transform: rotate(45deg);
-
+            }
+            &.is-invalid::before {
+                border-color: $accent_color;
             }
         }
         &-radio-holder {

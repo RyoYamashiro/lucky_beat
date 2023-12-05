@@ -64,10 +64,9 @@
                     </label>
                 </div>
                 {{-- @error('title') --}}
-                    <span class="input-error-message" role="alert">
-                        {{-- <strong>{{ $message }}</strong> --}}
-                        文字列で入力してください。
-                    </span>
+                    {{-- <span class="input-error-message" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span> --}}
                 {{-- @enderror --}}
             </div>
 
