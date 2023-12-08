@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPasswordJP as ResetPasswordNotificationJP;
+use App\Notifications\VerifyEmailJP;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,5 +48,19 @@ class User extends Authenticatable implements MustVerifyEmail
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    // 認証メール送信用オーバーライドメソッド
+    public function sendEmailVerificationNotification()
+    {
+        // $this->notify(new VerifyEmail);
+        $this->notify(new VerifyEmailJP);
+    }
+
+    // パスワード再設定メール送信用オーバーライドメソッド
+    public function sendPasswordResetNotification($token)
+    {
+        // $this->notify(new ResetPasswordNotification($token));
+        $this->notify(new ResetPasswordNotificationJP($token));
     }
 }
