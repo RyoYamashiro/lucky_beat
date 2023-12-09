@@ -12,6 +12,7 @@ use App\Http\Controllers\Front\User\UpdateAction;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\User\EditAction;
 use App\Http\Controllers\Front\User\EditEmailAction;
+use App\Http\Controllers\Front\User\UpdateEmailAction;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -35,6 +36,7 @@ Route::get('/user/{user}/edit', EditAction::class)->name('user.edit');
 Route::post('/user/{user}', UpdateAction::class)->name('user.update');
 Route::get('/user/{user}', UserDetailAction::class)->name('user.detail');
 Route::get('/user/{user}/email', EditEmailAction::class)->name('user.email.edit');
+Route::post('/user/{user}/email', UpdateEmailAction::class)->name('user.email.update');
 
 Route::get('/beat/noon/detail', DetailAction::class)->name('beat.detail');
 Route::get('/beat/noon/custom', CustomAction::class)->name('beat.custom');

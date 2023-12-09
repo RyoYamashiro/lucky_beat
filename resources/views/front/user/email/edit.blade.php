@@ -7,7 +7,7 @@
     </div>
 
     <div>
-        <form method="POST" action="">
+        <form method="POST" action="{{ route('user.email.update', ['user' => $user]) }}">
             @csrf
             @include('front.components.form.input', [
                 'name' => 'email',
@@ -15,7 +15,8 @@
                 'type' => 'email',
                 'attribute' => [
                     'required' => true,
-                    'context' => '※「更新」ボタン押下後に認証メールが届きますので、メール内のリンク押下後にメールアドレス更新が完了します。'
+                    'context' => '※「更新」ボタン押下後に認証メールが届きますので、メール内のリンク押下後にメールアドレス更新が完了します。',
+                    'value' => $user->email,
                 ]
             ])
             <div class="button-holder">
