@@ -23,7 +23,9 @@
                 'type' => 'text',
                 // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
                 'context' => '',
-                'required' => true
+                'attribute' => [
+                    'required' => true
+                ]
             ])
 
             @include('front.components.form.input', [
@@ -31,14 +33,18 @@
                 'label' => 'メールアドレス',
                 'type' => 'email',
                 'context' => '',
-                'required' => true
+                'attribute' => [
+                    'disabled' => true,
+                ]
             ])
+
+            <a class="button button-success">認証メール再送信</a>
+            <a class="button button-success">変更</a>
 
             @include('front.components.form.textarea', [
                 'name' => 'bio',
                 'label' => '自己紹介文',
-                'context' => '',
-                'required' => false
+                'context' => ''
             ])
 
 

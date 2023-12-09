@@ -15,7 +15,9 @@
                 'label' => 'ビートのタイトル',
                 'type' => 'text',
                 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
-                'required' => true
+                'attribute' => [
+                    'required' => true
+                ]
             ])
             
             <div class="justify-space-between">
@@ -24,7 +26,9 @@
                     'label' => 'BPM',
                     'type' => 'number',
                     'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
 
                 <div class="input-holder input-half">
@@ -89,27 +93,32 @@
                         'name' => 'hash_tag_1',
                         'type' => 'text',
                         'context' => '',
-                        'required' => false
+                        'attribute' => [
+                            'required' => false
+                        ]
                     ])
                     @include('front.components.form.input_hash_tag', [
                         'name' => 'hash_tag_2',
                         'type' => 'text',
                         'context' => '',
-                        'required' => false
+                        'attribute' => [
+                            'required' => false
+                        ]
                     ])
                     @include('front.components.form.input_hash_tag', [
                         'name' => 'hash_tag_3',
                         'type' => 'text',
                         'context' => '',
-                        'required' => false
+                        'attribute' => [
+                            'required' => false
+                        ]
                     ])
                 </div>
 
                 {{-- @error('hash_tag') --}}
-                    <span class="input-error-message" role="alert">
-                        {{-- <strong>{{ $message }}</strong> --}}
-                        文字列で入力してください。
-                    </span>
+                    {{-- <span class="input-error-message" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span> --}}
                 {{-- @enderror --}}
             </div>
             

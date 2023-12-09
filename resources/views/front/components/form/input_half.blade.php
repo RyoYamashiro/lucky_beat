@@ -1,4 +1,4 @@
-<div class="input-holder input-half @if($required) input-required @endif">
+<div class="input-holder input-half @if($attribute['required']) input-required @endif">
     <label for="{{ $name }}" class="input-label text-primary">{{ $label }}</label>
 
     <input id="{{ $name }}" type="{{ $type }}" class="input-form @error($name) is-invalid @enderror" name="{{ $name }}" value="{{ old( $name ) }}" required autocomplete="{{ $name }}" autofocus>

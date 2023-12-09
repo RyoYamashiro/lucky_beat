@@ -548,9 +548,14 @@ height: 100%;
                 }
             }
         }
+
+        &-disabled {
+            .input-form {
+                background: $opacity_color;
+            }
+        }
         // 下記サイトをベタガキ
         // https://qiita.com/pe-ta/items/74822fd9fce24848d97e
-        // TODO::チェックしたらペケマークを入れたい。
         &-checkbox {
             appearance: none;
             outline: none;
