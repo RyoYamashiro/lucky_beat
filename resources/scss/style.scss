@@ -153,9 +153,10 @@ height: 100%;
         .hamburger {
             position: relative;
             bottom: 15px;
+            display: block;
             span {
                 width: $space_size_3l;
-                height: 3px;
+                height: 4px;
                 border-radius: 2px;
                 background-color: $theme_color;
                 position: absolute;
