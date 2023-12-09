@@ -21,10 +21,10 @@
                 'name' => 'name',
                 'label' => 'ユーザー名',
                 'type' => 'text',
-                // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
-                'context' => '',
                 'attribute' => [
-                    'required' => true
+                    'required' => true,
+                    'value' => $user->name,
+                    // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
                 ]
             ])
 
@@ -32,19 +32,24 @@
                 'name' => 'email',
                 'label' => 'メールアドレス',
                 'type' => 'email',
-                'context' => '',
                 'attribute' => [
                     'disabled' => true,
+                    'value' => $user->email
                 ]
             ])
 
-            <a class="button button-success" href="{{ route('verification.send-again') }}">認証メール再送信</a> {{-- TODO::jsのconfirmで送信してもいいですか？のメッセージ表示 --}}
-            <a class="button button-success">変更</a>
+            <div class="button-holder">
+                @if($user->email_verified_at)
+                    <a class="button button-danger" href="{{ route('verification.send-again') }}">認証メール再送信</a>
+                    {{-- TODO::①Post送信のverification.resendにする。jsのconfirmで送信してもいいですか？のメッセージ表示 --}}
+                @endif
 
+                <a class="button button-success">メールアドレス変更</a>
+            </div>
             @include('front.components.form.textarea', [
                 'name' => 'bio',
                 'label' => '自己紹介文',
-                'context' => ''
+                'attribute' => []
             ])
 
 
@@ -61,6 +66,11 @@
                 </div>
             </div>
         </form>
+        {{-- TODO::本当の認証メール送信処理。導入後「route('verification.send-again')」は削除 --}}
+        {{-- <form action="{{ route('verification.resend')}}" method="post">
+            @csrf
+            <button>認証メールを送る</button>
+        </form> --}}
     </div>
 </div>
 @endsection
