@@ -14,7 +14,7 @@
                 'label' => 'メールアドレス',
                 'type' => 'email',
                 'attribute' => [
-                    'required' => true,
+                    // 'required' => true,
                     'context' => '※「更新」ボタン押下後に認証メールが届きますので、メール内のリンク押下後にメールアドレス更新が完了します。',
                     'value' => $user->email,
                 ]

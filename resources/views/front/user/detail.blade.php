@@ -14,8 +14,7 @@
             <p class="user-name text-primary">{{ $user->name }}</p>
         <span class="user-bio">
             {{-- TODO::リレーションのプロフィールデータのbioから取得。サニタイズもする。 --}}
-            福岡市でひっそり隠居しながら趣味でビートを作ってます。<br>
-            ちょっとアシッドジャズ調なものが好みで作ってます。
+            {{ $user->profile->bio }}
         </span>
     </div>
 </div>

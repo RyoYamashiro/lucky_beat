@@ -49,7 +49,9 @@
             @include('front.components.form.textarea', [
                 'name' => 'bio',
                 'label' => '自己紹介文',
-                'attribute' => []
+                'attribute' => [
+                    'value' => $user->profile->bio,
+                ]
             ])
 
 
