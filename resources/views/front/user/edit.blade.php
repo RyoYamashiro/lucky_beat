@@ -44,7 +44,7 @@
                     {{-- TODO::①Post送信のverification.resendにする。jsのconfirmで送信してもいいですか？のメッセージ表示 --}}
                 @endif
 
-                <a class="button button-success">メールアドレス変更</a>
+                <a href="{{ route('user.email.edit', ['user' => $user]) }}" class="button button-success">メールアドレス変更</a>
             </div>
             @include('front.components.form.textarea', [
                 'name' => 'bio',

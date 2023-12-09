@@ -11,6 +11,7 @@ use App\Http\Controllers\Front\User\DetailAction as UserDetailAction;
 use App\Http\Controllers\Front\User\UpdateAction;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\User\EditAction;
+use App\Http\Controllers\Front\User\EditEmailAction;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,9 +32,9 @@ Auth::routes([
 Route::get('/email/verification-notification', [VerificationController::class, 'sendVerifyMail'])->name('verification.send-again');
 
 Route::get('/user/{user}/edit', EditAction::class)->name('user.edit');
-Route::post('/user/{user}/', UpdateAction::class)->name('user.update');
-Route::get('/user/{user}/', UserDetailAction::class)->name('user.detail');
-
+Route::post('/user/{user}', UpdateAction::class)->name('user.update');
+Route::get('/user/{user}', UserDetailAction::class)->name('user.detail');
+Route::get('/user/{user}/email', EditEmailAction::class)->name('user.email.edit');
 
 Route::get('/beat/noon/detail', DetailAction::class)->name('beat.detail');
 Route::get('/beat/noon/custom', CustomAction::class)->name('beat.custom');
