@@ -18,7 +18,6 @@
                     'name' => 'email',
                     'label' => 'メールアドレス',
                     'type' => 'email',
-                    'context' => '',
                     'attribute' => [
                         'required' => true
                     ]
@@ -28,7 +27,6 @@
                     'name' => 'password',
                     'label' => 'パスワード',
                     'type' => 'password',
-                    'context' => '',
                     'attribute' => [
                         'required' => true
                     ]

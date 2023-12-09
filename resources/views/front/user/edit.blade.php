@@ -9,6 +9,7 @@
     <div>
         <form method="POST" action="{{ route('user.update', ['user' => $user]) }}">
             @csrf
+            {{-- TODO::画像登録をリアルタイムのAPI処理で入れる。Vue.js --}}
             <div class="input-holder">
                 <label for="name" class="input-label text-primary">アイコン画像</label>
                 <div class="input-icon-form">

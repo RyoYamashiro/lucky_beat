@@ -21,7 +21,7 @@
             @auth
                 <li class="menu-item"><a href="{{ route('user.detail', ['user' => Auth::user()]) }}" class="menu-link">マイページ</a></li>
                 <li class="menu-item"><a class="menu-link">ビート登録</a></li>
-                <li class="menu-item"><a class="menu-link">退会</a></li>
+                <li class="menu-item"><a href="{{ route('user.confirm_withdraw', Auth::user())}}" class="menu-link">退会</a></li>
             @endauth
             
             <li class="menu-item"><a class="menu-link" href="{{ route('contact')}}">お問い合わせ</a></li>

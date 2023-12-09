@@ -20,6 +20,7 @@ class UpdateAction extends Controller
         $user->update([
             'name' => $request->name,
         ]);
+        // TODO::画像の処理も入れる。
         $user->profile()->updateOrCreate(['user_id' => $user->id], [
             'bio' => $request->bio
         ]);
