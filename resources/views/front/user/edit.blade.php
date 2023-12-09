@@ -38,7 +38,7 @@
                 ]
             ])
 
-            <a class="button button-success">認証メール再送信</a>
+            <a class="button button-success" href="{{ route('verification.send-again') }}">認証メール再送信</a> {{-- TODO::jsのconfirmで送信してもいいですか？のメッセージ表示 --}}
             <a class="button button-success">変更</a>
 
             @include('front.components.form.textarea', [

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Front\Beat\DetailAction;
 use App\Http\Controllers\Front\Beat\CustomAction;
 use App\Http\Controllers\Front\Beat\CustomEditAction;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Front\User\DetailAction as UserDetailAction;
 use App\Http\Controllers\Front\User\UpdateAction;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\User\EditAction;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,7 @@ Route::get('/', IndexAction::class)->name('index');
 Auth::routes([
     'verify' => true,
 ]);
+Route::get('/email/verification-notification', [VerificationController::class, 'sendVerifyMail'])->name('verification.send-again');
 
 Route::get('/user/{user}/edit', EditAction::class)->name('user.edit');
 Route::post('/user/{user}/', UpdateAction::class)->name('user.update');
