@@ -5,7 +5,7 @@ namespace App\Http\Requests\Front\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateFormRequest extends FormRequest
+class UpdateEmailRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,16 +25,14 @@ class UpdateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'max:25'],
-            'bio' => ['max:255', 'required']
+            'email' => ['required', 'email', 'max:255', 'unique:users,email,'. Auth::user()->email. ',email'],
         ];
     }
 
     public function attributes()
     {
         return [
-            'name' => 'ユーザー名',
-            'bio' => '自己紹介文',
+            'email' => 'メールアドレス'
         ];
     }
 }

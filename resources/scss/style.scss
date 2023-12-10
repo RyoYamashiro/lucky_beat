@@ -84,7 +84,7 @@ input[type="file"] {
         font-size: $font_size_xl;
     }
     &-cancel {
-height: 100%;
+        height: 100%;
         color: $accent_color;
         border: 4px solid $accent_color;
         box-sizing: border-box;
@@ -548,9 +548,14 @@ height: 100%;
                 }
             }
         }
+
+        &-disabled {
+            .input-form {
+                background: $opacity_color;
+            }
+        }
         // 下記サイトをベタガキ
         // https://qiita.com/pe-ta/items/74822fd9fce24848d97e
-        // TODO::チェックしたらペケマークを入れたい。
         &-checkbox {
             appearance: none;
             outline: none;
@@ -700,6 +705,7 @@ height: 100%;
     .annotation-text {
         margin-left: $space_size_s;
         font-size: $font_size_l;
+        color: #888;
     }
 }
 

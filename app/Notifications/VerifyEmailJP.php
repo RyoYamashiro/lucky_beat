@@ -10,6 +10,7 @@ class VerifyEmailJP extends VerifyEmail
 {
     public function toMail($notifiable)
     {
+        dump($notifiable);
         $verificationUrl = $this->verificationUrl($notifiable);
 
         if (static::$toMailCallback) {

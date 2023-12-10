@@ -17,33 +17,37 @@
                     'name' => 'name',
                     'label' => 'ユーザー名',
                     'type' => 'text',
-                    // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true,
+                        // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                    ]
                 ])
                 
                 @include('front.components.form.input', [
                     'name' => 'email',
                     'label' => 'メールアドレス',
                     'type' => 'email',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
 
                 @include('front.components.form.input', [
                     'name' => 'password',
                     'label' => 'パスワード',
                     'type' => 'password',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
 
                 @include('front.components.form.input', [
                     'name' => 'password_confirmation',
                     'label' => '確認用パスワード',
                     'type' => 'password',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
                 <div class="input-holder">
                     <div class="input-label-holder">

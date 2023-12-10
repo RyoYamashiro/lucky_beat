@@ -18,16 +18,18 @@
                     'name' => 'email',
                     'label' => 'メールアドレス',
                     'type' => 'email',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
 
                 @include('front.components.form.input', [
                     'name' => 'password',
                     'label' => 'パスワード',
                     'type' => 'password',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
 
                 <input class="form-check-input" type="hidden" name="remember" id="remember" value="true">

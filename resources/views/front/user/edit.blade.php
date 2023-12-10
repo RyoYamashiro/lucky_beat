@@ -9,6 +9,7 @@
     <div>
         <form method="POST" action="{{ route('user.update', ['user' => $user]) }}">
             @csrf
+            {{-- TODO::画像登録をリアルタイムのAPI処理で入れる。Vue.js --}}
             <div class="input-holder">
                 <label for="name" class="input-label text-primary">アイコン画像</label>
                 <div class="input-icon-form">
@@ -21,24 +22,37 @@
                 'name' => 'name',
                 'label' => 'ユーザー名',
                 'type' => 'text',
-                // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
-                'context' => '',
-                'required' => true
+                'attribute' => [
+                    'required' => true,
+                    'value' => $user->name,
+                    // 'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                ]
             ])
 
             @include('front.components.form.input', [
                 'name' => 'email',
                 'label' => 'メールアドレス',
                 'type' => 'email',
-                'context' => '',
-                'required' => true
+                'attribute' => [
+                    'disabled' => true,
+                    'value' => $user->email
+                ]
             ])
 
+            <div class="button-holder">
+                @if($user->email_verified_at)
+                    <a class="button button-danger" href="{{ route('verification.send-again') }}">認証メール再送信</a>
+                    {{-- TODO::①Post送信のverification.resendにする。jsのconfirmで送信してもいいですか？のメッセージ表示 --}}
+                @endif
+
+                <a href="{{ route('user.email.edit', ['user' => $user]) }}" class="button button-success">メールアドレス変更</a>
+            </div>
             @include('front.components.form.textarea', [
                 'name' => 'bio',
                 'label' => '自己紹介文',
-                'context' => '',
-                'required' => false
+                'attribute' => [
+                    'value' => $user->profile->bio,
+                ]
             ])
 
 
@@ -55,6 +69,11 @@
                 </div>
             </div>
         </form>
+        {{-- TODO::本当の認証メール送信処理。導入後「route('verification.send-again')」は削除 --}}
+        {{-- <form action="{{ route('verification.resend')}}" method="post">
+            @csrf
+            <button>認証メールを送る</button>
+        </form> --}}
     </div>
 </div>
 @endsection

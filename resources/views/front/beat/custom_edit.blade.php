@@ -14,8 +14,10 @@
                 'name' => 'title',
                 'label' => 'ビートのタイトル',
                 'type' => 'text',
-                'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
-                'required' => true
+                'attribute' => [
+                    'required' => true,
+                    'context' => '※半角英数字と半角アンダーバー(_)で、他ユーザーと被らない文字列を入力してください。',
+                ]
             ])
             
             <div class="justify-space-between">
@@ -23,8 +25,9 @@
                     'name' => 'bpm',
                     'label' => 'BPM',
                     'type' => 'number',
-                    'context' => '',
-                    'required' => true
+                    'attribute' => [
+                        'required' => true
+                    ]
                 ])
 
                 <div class="input-holder input-half">
@@ -88,20 +91,14 @@
                     @include('front.components.form.input_hash_tag', [
                         'name' => 'hash_tag_1',
                         'type' => 'text',
-                        'context' => '',
-                        'required' => false
                     ])
                     @include('front.components.form.input_hash_tag', [
                         'name' => 'hash_tag_2',
                         'type' => 'text',
-                        'context' => '',
-                        'required' => false
                     ])
                     @include('front.components.form.input_hash_tag', [
                         'name' => 'hash_tag_3',
                         'type' => 'text',
-                        'context' => '',
-                        'required' => false
                     ])
                 </div>
 

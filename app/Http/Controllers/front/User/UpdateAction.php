@@ -17,19 +17,14 @@ class UpdateAction extends Controller
      */
     public function __invoke(UpdateFormRequest $request, User $user)
     {
-        
-        dump('UpdateAction');
-        dump($user->profile);
-        // TODO::メールアドレスがDBと違う場合は、認証メール送信する。
         $user->update([
             'name' => $request->name,
-            // 認証メール確認するまでは更新しない。
-            // 'email' => $request->email
         ]);
+        // TODO::画像の処理も入れる。
         $user->profile()->updateOrCreate(['user_id' => $user->id], [
             'bio' => $request->bio
         ]);
-        return redirect()->route('index');
+        return redirect()->route('user.detail', ['user' => $user]);
         //
     }
 }
