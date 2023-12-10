@@ -40,10 +40,10 @@
             ])
 
             <div class="button-holder">
-                @if($user->email_verified_at)
-                    <a class="button button-danger" href="{{ route('verification.send-again') }}">認証メール再送信</a>
+                @empty($user->email_verified_at)
+                    <a class="button button-danger" href="{{ route('verification.send_again') }}">認証メール再送信</a>
                     {{-- TODO::①Post送信のverification.resendにする。jsのconfirmで送信してもいいですか？のメッセージ表示 --}}
-                @endif
+                @endempty
 
                 <a href="{{ route('user.email.edit', ['user' => $user]) }}" class="button button-success">メールアドレス変更</a>
             </div>
@@ -51,7 +51,7 @@
                 'name' => 'bio',
                 'label' => '自己紹介文',
                 'attribute' => [
-                    'value' => $user->profile->bio,
+                    'value' => optional($user->profile)->bio,
                 ]
             ])
 

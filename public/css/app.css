@@ -575,6 +575,9 @@ video {
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -623,11 +626,14 @@ video {
 .rounded-lg {
   border-radius: 0.5rem;
 }
-.border-r {
-  border-right-width: 1px;
+.border {
+  border-width: 1px;
 }
 .border-t {
   border-top-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
@@ -651,10 +657,6 @@ video {
 .p-6 {
   padding: 1.5rem;
 }
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -662,6 +664,10 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -847,10 +853,11 @@ input[type=file] {
 .header .header-right-part .hamburger {
   position: relative;
   bottom: 15px;
+  display: block;
 }
 .header .header-right-part .hamburger span {
   width: 33px;
-  height: 3px;
+  height: 4px;
   border-radius: 2px;
   background-color: #FFB76F;
   position: absolute;
@@ -919,6 +926,8 @@ input[type=file] {
 }
 .header .nav-menu .menu-link {
   -webkit-font-smoothing: initial;
+  width: 100%;
+  color: #23DFDF;
 }
 
 .main-container {
@@ -1201,9 +1210,6 @@ input[type=file] {
   border: 2px solid #FFB76F;
   font-size: 1rem;
 }
-.white-holder .input-form-error {
-  border-color: #FFB6B6;
-}
 .white-holder .input-form-disabled {
   background: rgba(200, 200, 200, 0.5);
 }
@@ -1213,11 +1219,20 @@ input[type=file] {
 .white-holder .input-form-one-third .input-form {
   width: 90%;
 }
+.white-holder .input-form.is-invalid {
+  border-color: #FFB6B6;
+}
 .white-holder .input-required .input-label {
   color: #23DFDF;
 }
 .white-holder .input-required .input-form {
   border: 2px solid #23DFDF;
+}
+.white-holder .input-required .input-form.is-invalid {
+  border-color: #FFB6B6;
+}
+.white-holder .input-disabled .input-form {
+  background: rgba(200, 200, 200, 0.5);
 }
 .white-holder .input-checkbox {
   -webkit-appearance: none;
@@ -1256,6 +1271,9 @@ input[type=file] {
   border-right: 3px solid #23DFDF;
   border-bottom: 3px solid #23DFDF;
   transform: rotate(45deg);
+}
+.white-holder .input-checkbox.is-invalid::before {
+  border-color: #FFB6B6;
 }
 .white-holder .input-radio-holder {
   display: flex;
@@ -1358,6 +1376,7 @@ input[type=file] {
 .white-holder .annotation-text {
   margin-left: 3px;
   font-size: 0.7rem;
+  color: #888;
 }
 
 .switch-holder {

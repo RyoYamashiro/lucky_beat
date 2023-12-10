@@ -14,7 +14,7 @@
             <p class="user-name text-primary">{{ $user->name }}</p>
         <span class="user-bio">
             {{-- TODO::リレーションのプロフィールデータのbioから取得。サニタイズもする。 --}}
-            {{ $user->profile->bio }}
+            {{ optional($user->profile)->bio }}
         </span>
     </div>
 </div>
